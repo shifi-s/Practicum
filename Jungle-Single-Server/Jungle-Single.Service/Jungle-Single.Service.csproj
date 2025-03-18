@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>Jungle_Single.Service</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jungle-Single.Core\Jungle-Single.Core.csproj" />
+    <ProjectReference Include="..\Jungle-Single.Data\Jungle-Single.Data.csproj" />
+  </ItemGroup>
+
+</Project>

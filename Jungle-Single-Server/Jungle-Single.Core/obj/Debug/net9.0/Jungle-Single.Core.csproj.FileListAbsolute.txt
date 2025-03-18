@@ -1,0 +1,4 @@
+C:\Users\user1\practicum\Jungle-Single\Jungle-Single.Core\obj\Debug\net9.0\Jungle-Single.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\practicum\Jungle-Single\Jungle-Single.Core\obj\Debug\net9.0\Jungle-Single.Core.AssemblyInfoInputs.cache
+C:\Users\user1\practicum\Jungle-Single\Jungle-Single.Core\obj\Debug\net9.0\Jungle-Single.Core.AssemblyInfo.cs
+C:\Users\user1\practicum\Jungle-Single\Jungle-Single.Core\obj\Debug\net9.0\Jungle-Single.Core.csproj.CoreCompileInputs.cache
