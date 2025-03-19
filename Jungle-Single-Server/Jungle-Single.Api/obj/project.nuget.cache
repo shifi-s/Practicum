@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gJ3dgoat6vg=",
+  "dgSpecHash": "1PGtz9YhlKU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Api\\Jungle-Single.Api.csproj",
+  "projectFilePath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Jungle-Single.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user1\\.nuget\\packages\\google.apis\\1.69.0\\google.apis.1.69.0.nupkg.sha512",
     "C:\\Users\\user1\\.nuget\\packages\\google.apis.auth\\1.69.0\\google.apis.auth.1.69.0.nupkg.sha512",

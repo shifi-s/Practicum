@@ -9,3 +9,6 @@ C:\Users\user1\practicum\Jungle-Single\Jungle-Single.Service\obj\Debug\net9.0\Ju
 C:\Users\user1\practicum\Jungle-Single\Jungle-Single.Service\obj\Debug\net9.0\refint\Jungle-Single.Service.dll
 C:\Users\user1\practicum\Jungle-Single\Jungle-Single.Service\obj\Debug\net9.0\Jungle-Single.Service.pdb
 C:\Users\user1\practicum\Jungle-Single\Jungle-Single.Service\obj\Debug\net9.0\ref\Jungle-Single.Service.dll
+C:\Users\user1\Desktop\Jungle-Single-Practicum\Jungle-Single-Server\Jungle-Single.Service\obj\Debug\net9.0\Jungle-Single.Service.dll
+C:\Users\user1\Desktop\Jungle-Single-Practicum\Jungle-Single-Server\Jungle-Single.Service\obj\Debug\net9.0\refint\Jungle-Single.Service.dll
+C:\Users\user1\Desktop\Jungle-Single-Practicum\Jungle-Single-Server\Jungle-Single.Service\obj\Debug\net9.0\Jungle-Single.Service.pdb

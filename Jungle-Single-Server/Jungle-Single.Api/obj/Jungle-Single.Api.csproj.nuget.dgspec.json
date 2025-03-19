@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Api\\Jungle-Single.Api.csproj": {}
+    "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Jungle-Single.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Api\\Jungle-Single.Api.csproj": {
+    "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Jungle-Single.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Api\\Jungle-Single.Api.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Jungle-Single.Api.csproj",
         "projectName": "Jungle-Single.Api",
-        "projectPath": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Api\\Jungle-Single.Api.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Jungle-Single.Api.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Api\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Service\\Jungle-Single.Service.csproj": {
-                "projectPath": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Service\\Jungle-Single.Service.csproj"
+              "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Jungle-Single.Service.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Jungle-Single.Service.csproj"
               }
             }
           }
@@ -82,14 +82,14 @@
         }
       }
     },
-    "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Core\\Jungle-Single.Core.csproj": {
+    "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Jungle-Single.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Core\\Jungle-Single.Core.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Jungle-Single.Core.csproj",
         "projectName": "Jungle-Single.Core",
-        "projectPath": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Core\\Jungle-Single.Core.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Jungle-Single.Core.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Core\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -147,14 +147,14 @@
         }
       }
     },
-    "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Data\\Jungle-Single.Data.csproj": {
+    "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Jungle-Single.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Data\\Jungle-Single.Data.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Jungle-Single.Data.csproj",
         "projectName": "Jungle-Single.Data",
-        "projectPath": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Data\\Jungle-Single.Data.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Jungle-Single.Data.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Data\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -175,8 +175,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Core\\Jungle-Single.Core.csproj": {
-                "projectPath": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Core\\Jungle-Single.Core.csproj"
+              "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Jungle-Single.Core.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Jungle-Single.Core.csproj"
               }
             }
           }
@@ -226,14 +226,14 @@
         }
       }
     },
-    "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Service\\Jungle-Single.Service.csproj": {
+    "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Jungle-Single.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Service\\Jungle-Single.Service.csproj",
+        "projectUniqueName": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Jungle-Single.Service.csproj",
         "projectName": "Jungle-Single.Service",
-        "projectPath": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Service\\Jungle-Single.Service.csproj",
+        "projectPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Jungle-Single.Service.csproj",
         "packagesPath": "C:\\Users\\user1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Service\\obj\\",
+        "outputPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -254,11 +254,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Core\\Jungle-Single.Core.csproj": {
-                "projectPath": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Core\\Jungle-Single.Core.csproj"
+              "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Jungle-Single.Core.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Jungle-Single.Core.csproj"
               },
-              "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Data\\Jungle-Single.Data.csproj": {
-                "projectPath": "C:\\Users\\user1\\practicum\\Jungle-Single\\Jungle-Single.Data\\Jungle-Single.Data.csproj"
+              "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Jungle-Single.Data.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Jungle-Single.Data.csproj"
               }
             }
           }
