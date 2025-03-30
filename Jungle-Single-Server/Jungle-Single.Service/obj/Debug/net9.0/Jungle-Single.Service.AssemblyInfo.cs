@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Jungle-Single.Service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1cde951ab91f92899e8f46e99f37d416c8245989")]
 [assembly: System.Reflection.AssemblyProductAttribute("Jungle-Single.Service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Jungle-Single.Service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

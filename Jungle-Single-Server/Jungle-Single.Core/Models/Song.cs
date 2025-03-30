@@ -12,9 +12,9 @@ namespace Jungle_Single.Core.Models
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
         public string Artist { get; set; } = string.Empty;
-        public int GenreId { get; set; } // קישור לז'אנר
-        public Genre? Genre { get; set; }
-        public string Url { get; set; } = string.Empty; // קישור לקובץ השיר
+        public string? Genre { get; set; } = string.Empty;
+        public string AudioUrl { get; set; } = string.Empty;
+        public string Tags { get; set; } = ""; // קישור לקובץ השיר
         public List<Rating>? Ratings { get; set; } // דירוגים
     }
 }

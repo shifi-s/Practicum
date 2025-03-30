@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Jungle-Single.Core\Jungle-Single.Core.csproj" />
-    <ProjectReference Include="..\Jungle-Single.Data\Jungle-Single.Data.csproj" />
   </ItemGroup>
 
 </Project>
