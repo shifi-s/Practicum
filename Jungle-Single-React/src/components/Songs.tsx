@@ -1,97 +1,245 @@
-import { useState, useEffect, useContext, useRef } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { Button, Card, CardContent, Typography, Grid2 as Grid, IconButton, Tooltip, Stack, AppBar, Toolbar, Box } from "@mui/material";
-import { Outlet, useNavigate } from "react-router-dom";
-import SearchSongs from "./searchSongs";
-import DeleteSong from "./deleteSong";
+import { 
+  Button, 
+  Typography, 
+  Grid2 as Grid, 
+  Box, 
+  Alert, 
+  Snackbar, 
+  Container,
+  Paper,
+  CircularProgress,
+  Fade,
+  Grow
+} from "@mui/material";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import songStore from "../stores/songsStore";
 import { UserContext } from "./userContext";
-import { Add } from "@mui/icons-material";
+import { useModal } from "./modalContext"; // ייבוא הקונטקסט החדש
+import { 
+  Add, 
+  MusicNote, 
+  ErrorOutline 
+} from "@mui/icons-material";
+import ShowSongs from "./showSongs";
+import think from "../assets/think.gif";
 
 const Songs = observer(() => {
-  const [isSearch, setIsSearch] = useState("")
+  const [isSearch, setIsSearch] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   const apiUrl = "https://localhost:7265";
   const userContext = useContext(UserContext);
+  
   const { user } = userContext!;
+  const [connect, setIsConnect] = useState(true);
   const navigate = useNavigate();
-  const audioRefs = useRef<{ [key: number]: HTMLAudioElement | null }>({});
+  
+  // שימוש בקונטקסט המודלים
+  const { openModal } = useModal();
 
   useEffect(() => {
-    songStore.fetchSongs();
+    const fetchData = async () => {
+      setIsLoading(true);
+      await songStore.fetchSongs();
+      setIsLoading(false);
+    };
+    
+    fetchData();
   }, []);
-  const handlePlay = (id: number) => {
-    Object.entries(audioRefs.current).forEach(([key, audio]) => {
-      if (parseInt(key) !== id && audio) {
-        audio.pause();
-      }
-    });
-  }
-  const searchSongs = async (query: string) => {
-    setIsSearch(query)
-    if (!query.trim()) {
-      songStore.fetchSongs();
-      return;
-    }
-    try {
-      const response = await axios.get(apiUrl + `/api/songs/search`, {
-        params: { tag: query },
-      });
-      songStore.songs = response.data;
-    } catch (err) {
-      console.error("Error searching songs:", err);
-      songStore.songs = [];
-    }
+
+  // פונקציה לטיפול בלחיצה על הלינק "כאן"
+  const handleLoginClick = (e: React.MouseEvent) => {
+    e.preventDefault(); // מונע ניווט ברירת מחדל
+    setIsConnect(true); // סוגר את הסנאקבר
+    openModal('register'); // פותח את מודל ההתחברות
   };
 
   return (
-    <>
-
+    <Container maxWidth="lg" sx={{ pb: 10 }}>
       <Outlet />
-      <Box display="flex" justifyContent="space-between" alignItems="center" mb={3} p={2} sx={{ backgroundColor: "#f5f5f5", borderRadius: "8px" }}>
-        <SearchSongs onSearch={searchSongs} />
-      {  <Button
-          variant="contained"
-          color="primary"
-          startIcon={<Add />}
-          onClick={user?.name?() => navigate("/songs/uploadSong"):()=>alert("יש להתחבר כדי להעלות שיר")}
-          sx={{ fontSize: "16px", padding: "8px 16px" }}
+      
+      {/* פס תכלת פשוט */}
+      
+      
+      {/* Floating Add Song Button */}
+      <Grow in={true} timeout={800}>
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          position="fixed"
+          bottom={24}
+          right={24}
+          zIndex={1000}
         >
-          העלאת שיר
-        </Button>
-}
-      </Box>
-      <Grid container spacing={3} sx={{ mt: 3 }}>
-        {songStore.songs.length === 0 ? (isSearch.length > 0 ? (
-          <Typography variant="h6" sx={{ color: "red", textAlign: "center", width: "100%" }}>
-            ❌ לא נמצאו שירים
-          </Typography>
-        ) : (<Typography variant="h6" sx={{ color: "red", textAlign: "center", width: "100%" }}>
-          ...טוען שירים
-        </Typography>)) : (
-          songStore.songs.map((song) => (
-            <Grid key={song.id} >
-              <Card sx={{ p: 2, display: "flex", flexDirection: "column", justifyContent: "space-around", alignItems: "center", width: 250, height: 150 }}>
-                <CardContent>
-                  <Typography variant="h6" >{song.title} - {song.artist}</Typography>
-                  <audio controls style={{
-                    width: "220px", marginTop: "10px"
-                  }}
-                    ref={(el) => { if (el) audioRefs.current[song.id] = el; }}
-                    onPlay={() => handlePlay(song.id)}>
-                    <source src={song.audioUrl} type="audio/mp3" />
-                  </audio>
-                  {user?.role == "0" && <DeleteSong id={song.id} />
-                  }
+          <Button
+            variant="contained"
+            sx={{
+              background: "linear-gradient(90deg, #3a86ff, #4361ee)",
+              color: "white",
+              fontSize: "15px",
+              padding: "10px 16px",
+              borderRadius: "12px",
+              fontWeight: 600,
+              textTransform: "none",
+              backdropFilter: "blur(8px)",
+              boxShadow: "0 4px 15px rgba(58, 134, 255, 0.3)",
+              transition: "all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+              border: "1px solid rgba(255, 255, 255, 0.15)",
+              '&:hover': {
+                background: "linear-gradient(90deg, #4361ee, #3a86ff)",
+                transform: "translateY(-3px)",
+                boxShadow: "0 6px 20px rgba(58, 134, 255, 0.4)",
+              },
+              '&:active': {
+                transform: "translateY(1px)",
+                boxShadow: "0 2px 8px rgba(58, 134, 255, 0.3)",
+              }
+            }}
+            startIcon={
+              <Add sx={{ 
+                fontSize: 20,
+                filter: "drop-shadow(0 0 2px rgba(255, 255, 255, 0.5))"
+              }} />
+            }
+            onClick={() => user?.name ? navigate("uploadSong") : setIsConnect(false)}
+          >
+            העלאת שיר
+          </Button>
+        </Box>
+      </Grow>
 
-                </CardContent>
-              </Card>
-            </Grid>
-          ))
-        )}
-      </Grid>
-    </>
+      {/* Loading State */}
+      {isLoading ? (
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '300px' }}>
+          <CircularProgress color="primary" />
+        </Box>
+      ) : (
+        <>
+        <Box sx={{
+        width: '100%',
+        height: '60px',
+        background: 'linear-gradient(160deg, rgba(58, 134, 255, 0.08), rgba(67, 97, 238, 0.04))',
+        borderRadius: '12px',
+        marginBottom: '30px',
+        marginTop: '20px'
+      }} />
+          {/* Empty State or Results */}
+          {songStore.songs.length === 0 ? (
+            <Paper 
+              elevation={0} 
+              sx={{ 
+                p: 4, 
+                textAlign: 'center', 
+                borderRadius: '16px',
+                backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(0, 0, 0, 0.05)',
+                maxWidth: '600px',
+                mx: 'auto',
+                mt: 4
+              }}
+            >
+              {isSearch.length > 0 ? (
+                <Box>
+                  <ErrorOutline sx={{ fontSize: 60, color: '#f44336', mb: 2, opacity: 0.7 }} />
+                  <Typography variant="h6" sx={{ color: '#555', fontWeight: 500, mb: 1 }}>
+                    לא נמצאו שירים התואמים את "{isSearch}"
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: '#777', mb: 2 }}>
+                    נסה לחפש מחדש עם מילות מפתח אחרות
+                  </Typography>
+                  <Button 
+                    variant="outlined" 
+                    color="primary" 
+                  >
+                    נקה חיפוש
+                  </Button>
+                </Box>
+              ) : (
+                <Box>
+                  <img 
+                    src={think} 
+                    alt="No songs found" 
+                    style={{ 
+                      width: '120px', 
+                      marginBottom: '16px',
+                      filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.1))'
+                    }} 
+                  />
+                  <Typography variant="h6" sx={{ color: '#555', fontWeight: 500, mb: 1 }}>
+                    אין שירים להצגה
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: '#777', mb: 2 }}>
+                    התחל להוסיף שירים או חזור מאוחר יותר
+                  </Typography>
+                  {user?.name && (
+                    <Button 
+                      variant="contained" 
+                      color="primary" 
+                      onClick={() => navigate("uploadSong")}
+                      startIcon={<Add />}
+                    >
+                      העלה שיר ראשון
+                    </Button>
+                  )}
+                </Box>
+              )}
+            </Paper>
+          ) : (
+            <Fade in={!isLoading} timeout={800}>
+              <Box>
+                <ShowSongs />
+              </Box>
+            </Fade>
+          )}
+        </>
+      )}
+
+      {/* Connect Alert */}
+      <Snackbar 
+        open={!connect}
+        autoHideDuration={6000}
+        onClose={() => setIsConnect(true)}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert 
+          severity="warning"
+          variant="filled"
+          sx={{ 
+            borderRadius: '10px',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+            '& .MuiAlert-icon': {
+              fontSize: '24px'
+            }
+          }}
+        >
+          כדי להעלות שיר יש להתחבר&nbsp;
+          <Box
+            component="span" 
+            onClick={handleLoginClick} // השינוי העיקרי: פונקציה לפתיחת מודל
+            sx={{ 
+              textDecoration: "none", 
+              color: "white", 
+              fontWeight: "bold",
+              background: "rgba(255,255,255,0.2)",
+              padding: "3px 8px",
+              borderRadius: "8px",
+              transition: "background 0.3s ease",
+              cursor: "pointer",
+              '&:hover': {
+                background: "rgba(255,255,255,0.3)"
+              }
+            }}
+          >
+            כאן  
+          </Box>
+        </Alert>
+      </Snackbar>
+    </Container>
   );
-}
-);
+});
+
 export default Songs;

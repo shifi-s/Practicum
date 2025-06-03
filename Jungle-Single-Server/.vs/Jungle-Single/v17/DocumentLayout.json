@@ -3,107 +3,135 @@
   "WorkspaceRootPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\AppData\\Roaming\\Microsoft\\UserSecrets\\69ecd728-eeae-4deb-a76e-349f6f312c78\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|solutionrelative:jungle-single.data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\jungle-single.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\jungle-single.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\jungle-single.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\jungle-single.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\controllers\\songscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\controllers\\songscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\jungle-single.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\jungle-single.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.data\\repositories\\songrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|solutionrelative:jungle-single.data\\repositories\\songrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\dtosmodels\\songdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\dtosmodels\\songdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0900E9D5-7D89-4F4E-9239-4DD1A5967428}|Jungle-Single.Service\\Jungle-Single.Service.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.service\\services\\songrecommandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0900E9D5-7D89-4F4E-9239-4DD1A5967428}|Jungle-Single.Service\\Jungle-Single.Service.csproj|solutionrelative:jungle-single.service\\services\\songrecommandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.data\\jungle-single.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|solutionrelative:jungle-single.data\\jungle-single.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{0900E9D5-7D89-4F4E-9239-4DD1A5967428}|Jungle-Single.Service\\Jungle-Single.Service.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.service\\services\\analyzerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0900E9D5-7D89-4F4E-9239-4DD1A5967428}|Jungle-Single.Service\\Jungle-Single.Service.csproj|solutionrelative:jungle-single.service\\services\\analyzerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\irepositories\\iplaylistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\irepositories\\iplaylistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|solutionrelative:jungle-single.data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\dtosmodels\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\dtosmodels\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\AppData\\Roaming\\Microsoft\\UserSecrets\\69ecd728-eeae-4deb-a76e-349f6f312c78\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\jungle-single.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\jungle-single.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0900E9D5-7D89-4F4E-9239-4DD1A5967428}|Jungle-Single.Service\\Jungle-Single.Service.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.service\\services\\playlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0900E9D5-7D89-4F4E-9239-4DD1A5967428}|Jungle-Single.Service\\Jungle-Single.Service.csproj|solutionrelative:jungle-single.service\\services\\playlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0900E9D5-7D89-4F4E-9239-4DD1A5967428}|Jungle-Single.Service\\Jungle-Single.Service.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0900E9D5-7D89-4F4E-9239-4DD1A5967428}|Jungle-Single.Service\\Jungle-Single.Service.csproj|solutionrelative:jungle-single.service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\iservices\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\iservices\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\dtosmodels\\updateuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\dtosmodels\\updateuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\dtosmodels\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\dtosmodels\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.data\\repositories\\songrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|solutionrelative:jungle-single.data\\repositories\\songrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.data\\jungle-single.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|solutionrelative:jungle-single.data\\jungle-single.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\dtosmodels\\songdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\dtosmodels\\songdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\iservices\\iplaylistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\iservices\\iplaylistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\irepositories\\iplaylistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\irepositories\\iplaylistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.data\\repositories\\playlistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|solutionrelative:jungle-single.data\\repositories\\playlistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\addsong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\addsong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\songsplalists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\songsplalists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|solutionrelative:jungle-single.data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\iservices\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\iservices\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\irepositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -114,16 +142,8 @@
       "RelativeMoniker": "D:0:0:{4B7FE0A8-0ADB-42E2-BE62-08B41D9AE5E4}|Jungle-Single.Api\\Jungle-Single.Api.csproj|solutionrelative:jungle-single.api\\jungle-single.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0900E9D5-7D89-4F4E-9239-4DD1A5967428}|Jungle-Single.Service\\Jungle-Single.Service.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.service\\services\\playlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0900E9D5-7D89-4F4E-9239-4DD1A5967428}|Jungle-Single.Service\\Jungle-Single.Service.csproj|solutionrelative:jungle-single.service\\services\\playlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0900E9D5-7D89-4F4E-9239-4DD1A5967428}|Jungle-Single.Service\\Jungle-Single.Service.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.service\\services\\songservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0900E9D5-7D89-4F4E-9239-4DD1A5967428}|Jungle-Single.Service\\Jungle-Single.Service.csproj|solutionrelative:jungle-single.service\\services\\songservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\iservices\\iplaylistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|solutionrelative:jungle-single.core\\iservices\\iplaylistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF595B22-E162-4A59-8182-647B20CB4C1A}|Jungle-Single.Core\\Jungle-Single.Core.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.core\\iservices\\isongservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -148,6 +168,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250320201633_a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Jungle-Single.Data\\Migrations\\20250320201633_a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.data\\migrations\\20250501094111_b.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|solutionrelative:jungle-single.data\\migrations\\20250501094111_b.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.data\\migrations\\20250430164512_a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|solutionrelative:jungle-single.data\\migrations\\20250430164512_a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|c:\\users\\user1\\desktop\\jungle-single-practicum\\jungle-single-server\\jungle-single.data\\migrations\\20250501163345_c.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{973FB8F4-D60F-4E56-98E8-9CA257B3D403}|Jungle-Single.Data\\Jungle-Single.Data.csproj|solutionrelative:jungle-single.data\\migrations\\20250501163345_c.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -157,199 +189,348 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Jungle-Single.Api.http",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Jungle-Single.Api.http",
-              "RelativeDocumentMoniker": "Jungle-Single.Api\\Jungle-Single.Api.http",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Jungle-Single.Api.http",
-              "RelativeToolTip": "Jungle-Single.Api\\Jungle-Single.Api.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-03-30T16:40:54.714Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "secrets.json",
-              "DocumentMoniker": "C:\\Users\\user1\\AppData\\Roaming\\Microsoft\\UserSecrets\\69ecd728-eeae-4deb-a76e-349f6f312c78\\secrets.json",
-              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\69ecd728-eeae-4deb-a76e-349f6f312c78\\secrets.json",
-              "ToolTip": "C:\\Users\\user1\\AppData\\Roaming\\Microsoft\\UserSecrets\\69ecd728-eeae-4deb-a76e-349f6f312c78\\secrets.json",
-              "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\69ecd728-eeae-4deb-a76e-349f6f312c78\\secrets.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-30T16:19:34.909Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Jungle-Single.Api.csproj",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Jungle-Single.Api.csproj",
-              "RelativeDocumentMoniker": "Jungle-Single.Api\\Jungle-Single.Api.csproj",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Jungle-Single.Api.csproj",
-              "RelativeToolTip": "Jungle-Single.Api\\Jungle-Single.Api.csproj",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAmwAYAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-20T19:45:15.153Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "Jungle-Single.Api\\appsettings.json",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\appsettings.json",
-              "RelativeToolTip": "Jungle-Single.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-20T21:08:39.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\AppDbContext.cs",
-              "RelativeToolTip": "Jungle-Single.Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:03:21.331Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Program.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Program.cs",
-              "RelativeToolTip": "Jungle-Single.Api\\Program.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAqwEQAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T19:44:55.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SongsController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\SongsController.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Api\\Controllers\\SongsController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\SongsController.cs",
-              "RelativeToolTip": "Jungle-Single.Api\\Controllers\\SongsController.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAF4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T21:39:02.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Api\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Jungle-Single.Api\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAABAAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T21:39:09.063Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "uploadController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\uploadController.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Api\\Controllers\\uploadController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\uploadController.cs",
-              "RelativeToolTip": "Jungle-Single.Api\\Controllers\\uploadController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T18:43:22.742Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Jungle-Single.Api\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Jungle-Single.Api\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAuwDcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T21:27:56.016Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Jungle-Single.Core.csproj",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Jungle-Single.Core.csproj",
-              "RelativeDocumentMoniker": "Jungle-Single.Core\\Jungle-Single.Core.csproj",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Jungle-Single.Core.csproj",
-              "RelativeToolTip": "Jungle-Single.Core\\Jungle-Single.Core.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-20T21:36:40.823Z",
+              "WhenOpened": "2025-05-29T18:31:31.379Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "SongRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Repositories\\SongRepository.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Data\\Repositories\\SongRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Repositories\\SongRepository.cs",
-              "RelativeToolTip": "Jungle-Single.Data\\Repositories\\SongRepository.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAACUAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "AiController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\AiController.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Api\\Controllers\\AiController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\AiController.cs",
+              "RelativeToolTip": "Jungle-Single.Api\\Controllers\\AiController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T19:50:24.782Z"
+              "WhenOpened": "2025-05-20T10:15:37.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Song.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\Song.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Core\\Models\\Song.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\Song.cs",
+              "RelativeToolTip": "Jungle-Single.Core\\Models\\Song.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA4wBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T16:14:33.418Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AnalyzerService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Services\\AnalyzerService.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Service\\Services\\AnalyzerService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Services\\AnalyzerService.cs",
+              "RelativeToolTip": "Jungle-Single.Service\\Services\\AnalyzerService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T17:27:29.427Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SongRecommandService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Services\\SongRecommandService.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Service\\Services\\SongRecommandService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Services\\SongRecommandService.cs",
+              "RelativeToolTip": "Jungle-Single.Service\\Services\\SongRecommandService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwBMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T10:06:31.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\AppDbContext.cs",
+              "RelativeToolTip": "Jungle-Single.Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAxwBQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T20:03:21.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SongsController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\SongsController.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Api\\Controllers\\SongsController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\SongsController.cs",
+              "RelativeToolTip": "Jungle-Single.Api\\Controllers\\SongsController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T21:39:02.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PlaylistController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\PlaylistController.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Api\\Controllers\\PlaylistController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\PlaylistController.cs",
+              "RelativeToolTip": "Jungle-Single.Api\\Controllers\\PlaylistController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAD4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T21:38:31.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "secrets.json",
+              "DocumentMoniker": "C:\\Users\\user1\\AppData\\Roaming\\Microsoft\\UserSecrets\\69ecd728-eeae-4deb-a76e-349f6f312c78\\secrets.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\69ecd728-eeae-4deb-a76e-349f6f312c78\\secrets.json",
+              "ToolTip": "C:\\Users\\user1\\AppData\\Roaming\\Microsoft\\UserSecrets\\69ecd728-eeae-4deb-a76e-349f6f312c78\\secrets.json",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\69ecd728-eeae-4deb-a76e-349f6f312c78\\secrets.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAACzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-20T10:27:00.386Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "updateUser.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\DTOsModels\\updateUser.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Core\\DTOsModels\\updateUser.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\DTOsModels\\updateUser.cs",
+              "RelativeToolTip": "Jungle-Single.Core\\DTOsModels\\updateUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T23:44:51.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Jungle-Single.Api.csproj",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Jungle-Single.Api.csproj",
+              "RelativeDocumentMoniker": "Jungle-Single.Api\\Jungle-Single.Api.csproj",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Jungle-Single.Api.csproj",
+              "RelativeToolTip": "Jungle-Single.Api\\Jungle-Single.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-20T19:45:15.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Service\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Services\\UserService.cs",
+              "RelativeToolTip": "Jungle-Single.Service\\Services\\UserService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAIBJwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T20:10:54.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PlaylistService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Services\\PlaylistService.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Service\\Services\\PlaylistService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Services\\PlaylistService.cs",
+              "RelativeToolTip": "Jungle-Single.Service\\Services\\PlaylistService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAAAwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T20:09:27.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Api\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Jungle-Single.Api\\Controllers\\UserController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAIBQwDgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T21:39:09.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Core\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\User.cs",
+              "RelativeToolTip": "Jungle-Single.Core\\Models\\User.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAIBZwAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T21:44:58.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "uploadController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\uploadController.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Api\\Controllers\\uploadController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\uploadController.cs",
+              "RelativeToolTip": "Jungle-Single.Api\\Controllers\\uploadController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAEBdwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T17:46:06.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "SongDto.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\DTOsModels\\SongDto.cs",
               "RelativeDocumentMoniker": "Jungle-Single.Core\\DTOsModels\\SongDto.cs",
               "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\DTOsModels\\SongDto.cs",
               "RelativeToolTip": "Jungle-Single.Core\\DTOsModels\\SongDto.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAIBJwBIAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T18:48:18.582Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Core\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\User.cs",
-              "RelativeToolTip": "Jungle-Single.Core\\Models\\User.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAEBUwBQAAAAAAAAAAAAAAA==",
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\DTOsModels\\UserDto.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Core\\DTOsModels\\UserDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\DTOsModels\\UserDto.cs",
+              "RelativeToolTip": "Jungle-Single.Core\\DTOsModels\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T21:44:58.339Z"
+              "WhenOpened": "2025-03-20T23:08:29.671Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Rating.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\Rating.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Core\\Models\\Rating.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\Rating.cs",
-              "RelativeToolTip": "Jungle-Single.Core\\Models\\Rating.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T20:07:09.304Z"
+              "DocumentIndex": 18,
+              "Title": "Jungle-Single.Data.csproj",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Jungle-Single.Data.csproj",
+              "RelativeDocumentMoniker": "Jungle-Single.Data\\Jungle-Single.Data.csproj",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Jungle-Single.Data.csproj",
+              "RelativeToolTip": "Jungle-Single.Data\\Jungle-Single.Data.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-20T21:46:06.854Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
+              "Title": "SongRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Repositories\\SongRepository.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Data\\Repositories\\SongRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Repositories\\SongRepository.cs",
+              "RelativeToolTip": "Jungle-Single.Data\\Repositories\\SongRepository.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAuwCMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T18:00:30.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "20250501163345_c.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250501163345_c.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Data\\Migrations\\20250501163345_c.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250501163345_c.cs",
+              "RelativeToolTip": "Jungle-Single.Data\\Migrations\\20250501163345_c.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAEBdwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T16:33:45.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IPlaylistService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Iservices\\IPlaylistService.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Core\\Iservices\\IPlaylistService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Iservices\\IPlaylistService.cs",
+              "RelativeToolTip": "Jungle-Single.Core\\Iservices\\IPlaylistService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T20:08:19.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IPlaylistRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\IRepositories\\IPlaylistRepository.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Core\\IRepositories\\IPlaylistRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\IRepositories\\IPlaylistRepository.cs",
+              "RelativeToolTip": "Jungle-Single.Core\\IRepositories\\IPlaylistRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T20:08:11.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "PlaylistRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Repositories\\PlaylistRepository.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Data\\Repositories\\PlaylistRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Repositories\\PlaylistRepository.cs",
+              "RelativeToolTip": "Jungle-Single.Data\\Repositories\\PlaylistRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T17:06:39.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Playlist.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\Playlist.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Core\\Models\\Playlist.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\Playlist.cs",
+              "RelativeToolTip": "Jungle-Single.Core\\Models\\Playlist.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAEBVwA0AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T17:00:07.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "addSong.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\addSong.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Core\\Models\\addSong.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\addSong.cs",
+              "RelativeToolTip": "Jungle-Single.Core\\Models\\addSong.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T17:59:43.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "20250501094111_b.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250501094111_b.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Data\\Migrations\\20250501094111_b.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250501094111_b.cs",
+              "RelativeToolTip": "Jungle-Single.Data\\Migrations\\20250501094111_b.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T09:41:12.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "SongsPlalists.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\SongsPlalists.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Core\\Models\\SongsPlalists.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\SongsPlalists.cs",
+              "RelativeToolTip": "Jungle-Single.Core\\Models\\SongsPlalists.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T16:13:36.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
               "Title": "Genre.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\Genre.cs",
               "RelativeDocumentMoniker": "Jungle-Single.Core\\Models\\Genre.cs",
@@ -361,128 +542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Song.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\Song.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Core\\Models\\Song.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\Song.cs",
-              "RelativeToolTip": "Jungle-Single.Core\\Models\\Song.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAIBJwBEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T16:59:22.822Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "20250322194520_s.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250322194520_s.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Data\\Migrations\\20250322194520_s.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250322194520_s.cs",
-              "RelativeToolTip": "Jungle-Single.Data\\Migrations\\20250322194520_s.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAIBQwBQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T19:45:20.289Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Jungle-Single.Data.csproj",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Jungle-Single.Data.csproj",
-              "RelativeDocumentMoniker": "Jungle-Single.Data\\Jungle-Single.Data.csproj",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Jungle-Single.Data.csproj",
-              "RelativeToolTip": "Jungle-Single.Data\\Jungle-Single.Data.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-20T21:46:06.854Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "20250322191349_zl.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250322191349_zl.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Data\\Migrations\\20250322191349_zl.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250322191349_zl.cs",
-              "RelativeToolTip": "Jungle-Single.Data\\Migrations\\20250322191349_zl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T19:13:49.277Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "20250322175330_good.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250322175330_good.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Data\\Migrations\\20250322175330_good.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250322175330_good.cs",
-              "RelativeToolTip": "Jungle-Single.Data\\Migrations\\20250322175330_good.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T17:53:30.162Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IPlaylistRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\IRepositories\\IPlaylistRepository.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Core\\IRepositories\\IPlaylistRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\IRepositories\\IPlaylistRepository.cs",
-              "RelativeToolTip": "Jungle-Single.Core\\IRepositories\\IPlaylistRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:08:11.249Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "20250320233154_bh.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250320233154_bh.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Data\\Migrations\\20250320233154_bh.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250320233154_bh.cs",
-              "RelativeToolTip": "Jungle-Single.Data\\Migrations\\20250320233154_bh.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T23:31:54.651Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "PlaylistController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\PlaylistController.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Api\\Controllers\\PlaylistController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Controllers\\PlaylistController.cs",
-              "RelativeToolTip": "Jungle-Single.Api\\Controllers\\PlaylistController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T21:38:31.016Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\DTOsModels\\UserDto.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Core\\DTOsModels\\UserDto.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\DTOsModels\\UserDto.cs",
-              "RelativeToolTip": "Jungle-Single.Core\\DTOsModels\\UserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T23:08:29.671Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "RegisterModel.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\RegisterModel.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Core\\Models\\RegisterModel.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\RegisterModel.cs",
-              "RelativeToolTip": "Jungle-Single.Core\\Models\\RegisterModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T23:09:05.352Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 27,
               "Title": "LoginModel.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\LoginModel.cs",
               "RelativeDocumentMoniker": "Jungle-Single.Core\\Models\\LoginModel.cs",
@@ -494,31 +554,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Service\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Services\\UserService.cs",
-              "RelativeToolTip": "Jungle-Single.Service\\Services\\UserService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAIBZwBkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 43,
+              "Title": "20250430164512_a.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250430164512_a.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Data\\Migrations\\20250430164512_a.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250430164512_a.cs",
+              "RelativeToolTip": "Jungle-Single.Data\\Migrations\\20250430164512_a.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:10:54.485Z"
+              "WhenOpened": "2025-04-30T16:45:13.078Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Iservices\\IUserService.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Core\\Iservices\\IUserService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Iservices\\IUserService.cs",
-              "RelativeToolTip": "Jungle-Single.Core\\Iservices\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:02:52.206Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Jungle-Single.Data\\Repositories\\UserRepository.cs",
@@ -530,7 +578,99 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Jungle-Single.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\appsettings.json",
+              "RelativeToolTip": "Jungle-Single.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-20T21:08:39.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Rating.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\Rating.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Core\\Models\\Rating.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\Rating.cs",
+              "RelativeToolTip": "Jungle-Single.Core\\Models\\Rating.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T20:07:09.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "20250322194520_s.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250322194520_s.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Data\\Migrations\\20250322194520_s.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250322194520_s.cs",
+              "RelativeToolTip": "Jungle-Single.Data\\Migrations\\20250322194520_s.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T19:45:20.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "20250322191349_zl.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250322191349_zl.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Data\\Migrations\\20250322191349_zl.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250322191349_zl.cs",
+              "RelativeToolTip": "Jungle-Single.Data\\Migrations\\20250322191349_zl.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T19:13:49.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "20250322175330_good.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250322175330_good.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Data\\Migrations\\20250322175330_good.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250322175330_good.cs",
+              "RelativeToolTip": "Jungle-Single.Data\\Migrations\\20250322175330_good.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T17:53:30.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "20250320233154_bh.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250320233154_bh.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Data\\Migrations\\20250320233154_bh.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250320233154_bh.cs",
+              "RelativeToolTip": "Jungle-Single.Data\\Migrations\\20250320233154_bh.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T23:31:54.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "RegisterModel.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\RegisterModel.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Core\\Models\\RegisterModel.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Models\\RegisterModel.cs",
+              "RelativeToolTip": "Jungle-Single.Core\\Models\\RegisterModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T23:09:05.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Iservices\\IUserService.cs",
+              "RelativeDocumentMoniker": "Jungle-Single.Core\\Iservices\\IUserService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Iservices\\IUserService.cs",
+              "RelativeToolTip": "Jungle-Single.Core\\Iservices\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T20:02:52.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\IRepositories\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Jungle-Single.Core\\IRepositories\\IUserRepository.cs",
@@ -542,31 +682,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 34,
               "Title": "Jungle-Single.Api",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Jungle-Single.Api.csproj",
               "RelativeDocumentMoniker": "Jungle-Single.Api\\Jungle-Single.Api.csproj",
               "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Api\\Jungle-Single.Api.csproj",
               "RelativeToolTip": "Jungle-Single.Api\\Jungle-Single.Api.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-20T21:08:35.835Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-20T21:08:35.835Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 41,
               "Title": "20250320201633_a.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250320201633_a.cs",
               "RelativeDocumentMoniker": "Jungle-Single.Data\\Migrations\\20250320201633_a.cs",
               "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Migrations\\20250320201633_a.cs",
               "RelativeToolTip": "Jungle-Single.Data\\Migrations\\20250320201633_a.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-20T20:16:33.973Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 35,
               "Title": "SongService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Services\\SongService.cs",
               "RelativeDocumentMoniker": "Jungle-Single.Service\\Services\\SongService.cs",
@@ -578,31 +716,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "PlaylistService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Services\\PlaylistService.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Service\\Services\\PlaylistService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Service\\Services\\PlaylistService.cs",
-              "RelativeToolTip": "Jungle-Single.Service\\Services\\PlaylistService.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAACBjwBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:09:27.852Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "IPlaylistService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Iservices\\IPlaylistService.cs",
-              "RelativeDocumentMoniker": "Jungle-Single.Core\\Iservices\\IPlaylistService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Iservices\\IPlaylistService.cs",
-              "RelativeToolTip": "Jungle-Single.Core\\Iservices\\IPlaylistService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:08:19.142Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 36,
               "Title": "ISongService.cs",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Iservices\\ISongService.cs",
               "RelativeDocumentMoniker": "Jungle-Single.Core\\Iservices\\ISongService.cs",

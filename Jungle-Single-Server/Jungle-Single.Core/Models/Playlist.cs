@@ -12,7 +12,6 @@ namespace Jungle_Single.Core.Models
         public string Name { get; set; } = string.Empty;
         public int UserId { get; set; }
         public User? User { get; set; }
-        public List<Song>? Songs { get; set; } = new List<Song>(); // שירים בפלייליסט
-
+        public List<SongsPlalists> PlaylistSongs { get; set; } = [];
     }
 }

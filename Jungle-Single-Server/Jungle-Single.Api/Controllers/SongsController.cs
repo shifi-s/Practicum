@@ -93,13 +93,16 @@ namespace Jungle_Single.Api.Controllers
         [Authorize]
         public async Task<ActionResult> AddSong(SongDto songDto)
         {
+            Console.WriteLine(  songDto.CoverUrl);
             var song = new Song
             {
+                CoverUrl=songDto.CoverUrl,
                 Title = songDto.Title,
                 Artist = songDto.Artist,
                 Genre = songDto.Genre,
                 AudioUrl = songDto.AudioUrl, // כתובת  לשיר
-                Tags = songDto.Title + ',' + songDto.Artist + "," + songDto.Genre
+                Tags = songDto.Title + ',' + songDto.Artist + "," + songDto.Genre,
+                UploadDate = DateTime.Now
             };
 
             await _songService.AddSongAsync(song);

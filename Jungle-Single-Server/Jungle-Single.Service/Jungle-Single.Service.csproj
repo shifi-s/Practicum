@@ -8,7 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="NPoco" Version="5.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Jungle-Single.Core\Jungle-Single.Core.csproj" />
+    <ProjectReference Include="..\Jungle-Single.Data\Jungle-Single.Data.csproj" />
   </ItemGroup>
 
 </Project>

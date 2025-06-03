@@ -48,7 +48,7 @@ namespace Jungle_Single.Api.Controllers
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(registerModel.Password),
                 Role = Roles.User,
                 Email = registerModel.Email,
-                Playlists = new List<Playlist>()
+                Playlists = []
             };
             await _userService.AddUserAsync(newUser);
             var token = GenerateJwtToken(newUser);

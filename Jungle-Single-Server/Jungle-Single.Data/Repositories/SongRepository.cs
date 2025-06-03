@@ -64,7 +64,7 @@ namespace Jungle_Single.Data.Repositories
             var song = await _context.Songs.FindAsync(id);
             if (song != null)
             {
-                _context.Songs.Remove(song);
+               song.IsDeleted = true;
                 await _context.SaveChangesAsync();
             }
         }

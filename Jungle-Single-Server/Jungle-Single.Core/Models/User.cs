@@ -14,8 +14,9 @@ namespace Jungle_Single.Core.Models
         public string UserName { get; set; }
          public string PasswordHash { get; set; }
         public string Email { get; set; }
-        public List<Playlist>? Playlists { get; set; } // פלייליסטים של המשתמש
+        public List<Playlist> Playlists { get; set; } = []; // פלייליסטים של המשתמש
 
+        public bool IsDeleted { get; set; }= false;
         public Roles Role { get; set; }
 
 

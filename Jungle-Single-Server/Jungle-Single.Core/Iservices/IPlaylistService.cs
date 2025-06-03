@@ -8,11 +8,18 @@ using System.Threading.Tasks;
 namespace Jungle_Single.Core.Iservices
 {
     public interface IPlaylistService
+
     {
-        Task<IEnumerable<Playlist>> GetAllPlaylistsAsync();
+        Task<bool> RemoveSongFromPlaylistAsync(int playlistId, int songId);
+
+        Task<bool> AddSongToPlaylistAsync(int playlistId, int songId);
+
+        Task<IEnumerable<Playlist>> GetAllPlaylistsAsync(int userId);
         Task<Playlist?> GetPlaylistByIdAsync(int id);
+  
+        Task<IEnumerable<Song>>GetSongsAsync(int playListId);
         Task AddPlaylistAsync(Playlist playlist);
-        Task UpdatePlaylistAsync(Playlist playlist);
+        Task UpdatePlaylistAsync(int id, string playlist);
         Task DeletePlaylistAsync(int id);
     }
 

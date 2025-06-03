@@ -332,6 +332,9 @@
             "projectReferences": {
               "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Jungle-Single.Core.csproj": {
                 "projectPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Core\\Jungle-Single.Core.csproj"
+              },
+              "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Jungle-Single.Data.csproj": {
+                "projectPath": "C:\\Users\\user1\\Desktop\\Jungle-Single-Practicum\\Jungle-Single-Server\\Jungle-Single.Data\\Jungle-Single.Data.csproj"
               }
             }
           }
@@ -351,6 +354,24 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "NPoco": {
+              "target": "Package",
+              "version": "[5.7.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

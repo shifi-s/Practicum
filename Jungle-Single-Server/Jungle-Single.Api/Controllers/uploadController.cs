@@ -15,15 +15,17 @@ public class UploadController : ControllerBase
     }
 
     [HttpGet("presigned-url")]
-    public async Task<IActionResult> GetPresignedUrl([FromQuery] string fileName)
+
+    public async Task<IActionResult> GetPresignedUrl([FromQuery] string fileName, [FromQuery]string contentType)
     {
+        Console.WriteLine(contentType);
         var request = new GetPreSignedUrlRequest
         {
             BucketName = "songs-bucket-aws-testpnoren",
             Key = fileName,
             Verb = HttpVerb.PUT,
             Expires = DateTime.UtcNow.AddMinutes(10),
-            //ContentType = "audio/mp3" // או סוג הקובץ המתאים
+            ContentType = contentType
         };
 
         string url = _s3Client.GetPreSignedURL(request);

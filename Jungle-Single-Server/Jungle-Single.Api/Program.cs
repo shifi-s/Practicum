@@ -67,9 +67,15 @@ builder.Services.AddScoped<IPlaylistService, PlaylistService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ISongRepository, SongRepository>();
 builder.Services.AddScoped<IPlaylistRepository, PlaylistRepository>();
+builder.Services.AddHttpClient();
+builder.Services.AddHttpClient<TranscriptionService>();
+
+builder.Services.AddHttpClient<MoodAnalyzerService>();
+builder.Services.AddScoped<SongRecommendationService>();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(9, 0, 0))));
 builder.Services.AddSingleton<IAmazonS3>(s3Client);
+
 
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));

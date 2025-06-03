@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Jungle_Single.Core.DtosModels;
+using Jungle_Single.Core.DTOsModels;
 using Jungle_Single.Core.Iservices;
 using Jungle_Single.Core.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -46,17 +47,14 @@ namespace Jungle_Single.Api.Controllers
             return CreatedAtAction(nameof(GetUserByEmail), new { id = user.Id }, user);
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateUser(int id, User user)
-        {
-            if (id != user.Id)
-            {
-                return BadRequest();
-            }
-
-            await _userService.UpdateUserAsync(user);
-            return NoContent();
-        }
+        //[HttpPut("{id}")]
+        //public async Task<ActionResult> UpdateUser(int id, updateUser user)
+        //{
+        
+        //    var user1=_userService.getUserById(id); 
+        //    await _userService.UpdateUserAsync(user);
+        //    return NoContent();
+        //}
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteUser(int id)

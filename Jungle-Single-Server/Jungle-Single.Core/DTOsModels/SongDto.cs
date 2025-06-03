@@ -10,6 +10,7 @@ namespace Jungle_Single.Core.DTOsModels
 {
     public class SongDto
     {
+        public string CoverUrl { get; set; } = string.Empty;
         [Required]
         public string Title { get; set; } = string.Empty;
 

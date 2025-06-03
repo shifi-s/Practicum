@@ -1,5 +1,6 @@
 ﻿using Jungle_Single.Core.Iservices;
 using Jungle_Single.Core.Models;
+using Jungle_Single.Service.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,58 +9,87 @@ using Microsoft.AspNetCore.Mvc;
 namespace Jungle_Single.Api.Controllers
 {
 
-    [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
-    public class PlaylistsController(IPlaylistService playlistService) : ControllerBase
+    [Route("api/[controller]")]
+    public class PlaylistsController : ControllerBase
     {
-        private readonly IPlaylistService _playlistService = playlistService;
+        private readonly IPlaylistService _service;
+        private readonly ISongService _songService;
+        public PlaylistsController(IPlaylistService service, ISongService songService) { _service = service; _songService=songService;}
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Playlist>>> GetAllPlaylists()
+        public async Task<ActionResult<IEnumerable<Playlist>>> GetPlaylistsByUser([FromQuery] int userId)
         {
-            var playlists = await _playlistService.GetAllPlaylistsAsync();
+            var playlists = await _service.GetAllPlaylistsAsync(userId);
             return Ok(playlists);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Playlist>> GetPlaylistById(int id)
+        public async Task<ActionResult<Playlist>> Get(int id)
         {
-            var playlist = await _playlistService.GetPlaylistByIdAsync(id);
-            if (playlist == null)
-            {
-                return NotFound();
-            }
+            var playlist = await _service.GetPlaylistByIdAsync(id);
+            if (playlist == null) return NotFound();
             return Ok(playlist);
         }
+        [HttpPost("{playlistId}/addSong")]
+        public async Task<IActionResult> AddSongToPlaylist(int playlistId ,[FromBody]  int songId)
+        {
+            var success = await _service.AddSongToPlaylistAsync(playlistId,songId);
+
+            if (!success)
+                return NotFound("Playlist or Song not found, or song already in playlist");
+
+            return Ok("Song added to playlist");
+        }
+
+        [HttpPut("{playlistId}")]
+        public async Task<ActionResult> UpdatePlaylistName(int playlistId, [FromBody]string name)
+        {
+           await _service.UpdatePlaylistAsync(playlistId,name);
+            return Ok("playlist renamed succesfuly");
+        }
+        [HttpGet("{playlistId}/songs")]
+        public async Task<IActionResult> GetSongs(int playlistId)
+        {
+            var songs = await _service.GetSongsAsync(playlistId);
+            if (songs == null )
+                return NotFound("No songs found in this playlist.");
+
+            return Ok(songs);
+        }
+        [HttpDelete("{playlistId}/removeSong/{songId}")]
+        public async Task<IActionResult> RemoveSongFromPlaylist(int playlistId, int songId)
+        {
+            var success = await _service.RemoveSongFromPlaylistAsync(playlistId, songId);
+            if (!success)
+                return NotFound("Playlist or song not found");
+
+            return Ok("Song removed from playlist");
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePlaylist(int id)
+        {
+            await _service.DeletePlaylistAsync(id); return Ok("playlist deleted succesfuly");
+        }
+      
+        //public async Task<IActionResult> AddSongToPlaylist(int playlistId, [FromBody] int songId)
+        //{
+        //    var song=await _songService.GetSongByIdAsync(songId);  
+        //    if (song == null) return NotFound();
+        //    var success = await _service.AddSongToPlaylistAsync(playlistId, song);
+        //    if (!success)
+        //        return NotFound("Playlist not found");
+
+        //    return Ok("Song added to playlist");
+        //}
 
         [HttpPost]
-        public async Task<ActionResult> AddPlaylist(Playlist playlist)
+        public async Task<ActionResult<Playlist>> Create([FromBody] Playlist playlist)
         {
-            await _playlistService.AddPlaylistAsync(playlist);
-            return CreatedAtAction(nameof(GetPlaylistById), new { id = playlist.Id }, playlist);
+            await _service.AddPlaylistAsync(playlist);
+            return CreatedAtAction(nameof(Get), new { id = playlist.Id }, playlist);
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult> UpdatePlaylist(int id, Playlist playlist)
-        {
-            if (id != playlist.Id)
-            {
-                return BadRequest();
-            }
-
-            await _playlistService.UpdatePlaylistAsync(playlist);
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> DeletePlaylist(int id)
-        {
-            await _playlistService.DeletePlaylistAsync(id);
-            return NoContent();
-        }
     }
-
-
 }
 

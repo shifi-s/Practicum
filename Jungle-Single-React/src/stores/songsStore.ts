@@ -6,12 +6,40 @@ class SongStore {
 apiUrl="https://localhost:7265"
 
   songs: Song[] = []; // רשימת השירים
+  query: string = ""
 
   constructor() {
     makeAutoObservable(this);
   }
+  setQuery(query: string) {
+    this.query = query
+  }
 
+  isFromLastWeek = (date: Date | string) => {
+    const uploadDate = new Date(date);
+    const now = new Date();
+    const oneWeekAgo = new Date();
+    oneWeekAgo.setDate(now.getDate() - 7);
+    
+    return uploadDate >= oneWeekAgo && uploadDate <= now;
+  };
+  get filteredSongs() {
+    const query = this.query.toLowerCase().trim()
+    if (!query)return this.songs.filter(song => !song.isDeleted)
+    if(query==="new")
+    { this.setQuery('');    
+       return this.songs.filter(song => this.isFromLastWeek(song.uploadDate))}
+    
+    const terms = query.split(' ').filter(term => term)
+  
+    return this.songs.filter(song =>
+      terms.every(term =>
+        song.tags?.toLowerCase().includes(term)
+      )
+    )
+  }
   // פונקציה להוספת שיר
+
   async addSong(song:Partial<Song>,token:string) {
     
     if (!token) {
@@ -23,6 +51,7 @@ apiUrl="https://localhost:7265"
                 Authorization: `Bearer ${token}`,
             },
         });
+        
     } catch (error: any) {
         console.error("Upload failed:", error.response?.data?.message);
     }
@@ -30,7 +59,7 @@ apiUrl="https://localhost:7265"
 
   // פונקציה למחיקת שיר לפי ID
   removeSong(id: number) {
-    const token = localStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
     async () => {
       if (!token) {
           ("Unauthorized: You must be logged in");
@@ -52,6 +81,14 @@ apiUrl="https://localhost:7265"
   };
   }
 
+  searchSongs = async (query: string) => {
+  const tags=query.split(" ")
+    this.songs=this.songs.filter((song) =>(tags.some(tag => song.tags?.includes(tag)) ))
+  
+    if(this.songs.length===0){
+      this.fetchSongs();
+      };
+    }
   // פונקציה להוספת שירים מהשרת
   fetchSongs = async () => {
     try {

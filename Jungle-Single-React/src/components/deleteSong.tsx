@@ -3,13 +3,13 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Tooltip, IconButton, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from "@mui/material";
 import {Delete} from "@mui/icons-material"
-import { set } from "mobx";
+
 const DeleteSong = ({id}:{id:number}) => {
       const[toDelete,setToDelete]=useState(false)
-    const [message, setMessage] = useState("");
+    const [, setMessage] = useState("");
 const navigate=useNavigate()
     const confirmDelete = async () => {
-        const token = localStorage.getItem("token");
+        const token = sessionStorage.getItem("token");
 
         if (!token) {
             setMessage("Unauthorized: You must be logged in");

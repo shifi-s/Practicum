@@ -14,7 +14,13 @@ namespace Jungle_Single.Core.Models
         public string Artist { get; set; } = string.Empty;
         public string? Genre { get; set; } = string.Empty;
         public string AudioUrl { get; set; } = string.Empty;
-        public string Tags { get; set; } = ""; // קישור לקובץ השיר
+        public string Tags { get; set; } = "";
+        public DateTime UploadDate { get; set; }
+        public bool IsDeleted { get; set; }=false;
+        public string? CoverUrl { get; set; }= string.Empty;    
+        //public List<SongsPlalists> Playlists=[];
         public List<Rating>? Ratings { get; set; } // דירוגים
+        public List<SongsPlalists> PlaylistSongs { get; set; } = [];
+        public string Lyrics = "";
     }
 }
