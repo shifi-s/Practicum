@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { 
   Alert, 
@@ -35,7 +34,6 @@ const Login = ({onClose}:{onClose:Function}) => {
   const [error, setError] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate();
   
   // שימוש בקונטקסט המודלים
   const { openModal } = useModal();
@@ -54,7 +52,7 @@ const Login = ({onClose}:{onClose:Function}) => {
   
   const onSubmit = async (data: { email: string; password: string }) => {
     try {
-      const response = await axios.post("https://localhost:7265/api/auth/login", data);
+      const response = await axios.post("https://nonstopmusicserver.onrender.com/api/auth/login", data);
       if (response?.data?.token) {
         sessionStorage.setItem("token", response.data.token);
         const user: User = {

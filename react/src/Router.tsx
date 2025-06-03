@@ -2,8 +2,7 @@ import { createBrowserRouter } from "react-router";
 import AppLayOut from "./components/ApplayOut";
 import Songs from "./components/Songs";
 import UploadSong from "./components/uploadSong";
-import Register from "./components/register";
-import Login from "./components/login";
+
 import MySongs from "./components/mySongs";
 import NewSongs from "./components/newSongs";
 import CreatePlaylistModal from "./components/AddPlalist";

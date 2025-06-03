@@ -1,7 +1,7 @@
 import { Avatar, IconButton, ListItemIcon, Menu, MenuItem, Tooltip, Box, Typography, Divider } from "@mui/material"
 import { useContext, useState } from "react"
 import React from "react"
-import { Logout, Settings, AccountCircle } from "@mui/icons-material"
+import { Logout, Settings } from "@mui/icons-material"
 import { UserContext } from "./userContext"
 import { useNavigate } from "react-router-dom"
 

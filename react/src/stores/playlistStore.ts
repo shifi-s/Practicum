@@ -2,11 +2,10 @@ import { makeObservable, observable, action, runInAction, computed } from 'mobx'
 import axios from 'axios';
 import { Playlist } from '../models/playlist';
 import { Song } from '../models/Song';
-import { useContext } from 'react';
-import { UserContext } from '../components/userContext';
+
 
 // URL בסיס ל-API
-const API_BASE_URL = 'https://localhost:7265';
+const API_BASE_URL = 'https://nonstopmusicserver.onrender.com';
 class PlaylistStore {
   // מצב אובזרבבל
   playlists: Playlist[] = [];
@@ -66,7 +65,7 @@ class PlaylistStore {
     
     try {
       const response =  await axios
-      .get(`https://localhost:7265/api/playlists?userId=${userId}`)
+      .get(`${API_BASE_URL}/api/playlists?userId=${userId}`)
 
       // עדכון המצב באמצעות runInAction כדי לשמור על אטומיות
       runInAction(() => {
@@ -89,7 +88,7 @@ class PlaylistStore {
     this.setError(null);
   
       try {
-        const response = await axios.post('https://localhost:7265/api/playlists', { name: name, userId: userId });  
+        const response = await axios.post(`${API_BASE_URL}/api/playlists`, { name: name, userId: userId });  
         
    
       

@@ -59,7 +59,7 @@ export default function PlaylistSongs() {
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false)
   const [songToDelete, setSongToDelete] = useState<string | null>(null)
 
-  const apiUrl = "https://localhost:7265"
+  const apiUrl = "https://nonstopmusicserver.onrender.com"
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const currentSongRef = useRef<HTMLDivElement | null>(null)
 

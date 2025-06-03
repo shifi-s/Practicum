@@ -47,7 +47,7 @@ const UploadSong = () => {
     const [customGenre, setCustomGenre] = useState("");
     const [message] = useState("");
     const navigate = useNavigate();
-    const apiUrl = "https://localhost:7265"
+    const apiUrl = "https://nonstopmusicserver.onrender.com"
     const token = sessionStorage.getItem('token')
 
     const uploadCoverToS3 = async (coverBlob: Blob, fileName: string): Promise<string | null> => {

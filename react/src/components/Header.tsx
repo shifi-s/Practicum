@@ -4,24 +4,23 @@ import { useContext, useState } from "react"
 import { UserContext } from "./userContext"
 import {
   Button,
-  InputAdornment,
-  TextField,
+  
   Box,
   AppBar,
   Toolbar,
   Typography,
-  Fade,
+
   Badge,
   Container,
 } from "@mui/material"
 
 import { useModal } from "./modalContext"
-import { Search, MusicNote, Whatshot, LibraryMusic } from "@mui/icons-material"
+import {  MusicNote, Whatshot, LibraryMusic } from "@mui/icons-material"
 import SearchSong from "./searchSong"
 
 const Header = () => {
   const location = useLocation()
-  const isSearchDisabled = location.pathname === "/"
+  
   const isTerms = location.pathname === "/terms"
 
   

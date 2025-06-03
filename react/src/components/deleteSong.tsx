@@ -17,7 +17,7 @@ const navigate=useNavigate()
         }
 
         try {
-            await axios.delete(`https://localhost:7265/api/songs/${id}`, {
+            await axios.delete(`https://nonstopmusicserver.onrender.com/api/songs/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

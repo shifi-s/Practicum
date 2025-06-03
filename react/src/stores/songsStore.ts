@@ -3,7 +3,7 @@ import { Song } from "../models/Song";
 import axios from "axios";
 
 class SongStore {
-apiUrl="https://localhost:7265"
+apiUrl="https://nonstopmusicserver.onrender.com"
 
   songs: Song[] = []; // רשימת השירים
   query: string = ""
@@ -46,7 +46,7 @@ apiUrl="https://localhost:7265"
         return;
     }
     try {
-        await axios.post("https://localhost:7265/api/songs", song, {
+        await axios.post(`${this.apiUrl}/api/songs`, song, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -67,7 +67,7 @@ apiUrl="https://localhost:7265"
       }
 
       try {
-          await axios.delete(`https://localhost:7265/api/songs/${id}`, {
+          await axios.delete(`https://nonstopmusicserver.onrender.com/api/songs/${id}`, {
               headers: {
                   Authorization: `Bearer ${token}`,
               },

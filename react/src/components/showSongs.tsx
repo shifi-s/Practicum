@@ -35,10 +35,9 @@ import { UserContext } from "./userContext";
 import { Song } from "../models/Song";
 import songStore from "../stores/songsStore";
 import { observer } from "mobx-react-lite";
-import { PlayIcon } from "lucide-react";
 
 const DEFAULT_COVER = "/default-cover.png";
-
+const API_URL="https://nonstopmusicserver.onrender.com/"
 // Media Player Component
 const MediaPlayer = ({ 
   song, 
@@ -428,7 +427,7 @@ const ShowSongs = observer(() => {
     
     try {
       setLoadingLyricsId(song.id);
-      const res = await fetch("https://localhost:7265/api/Ai/transcribe", {
+      const res = await fetch(`${API_URL}/api/Ai/transcribe`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(song.audioUrl)

@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
+import  { useContext, useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { UserContext } from './userContext';
 import {
@@ -15,11 +14,9 @@ import {
   Button,
   TextField,
   Box,
-  Paper,
-  Container,
-  Fade,
-  Divider,
-  alpha
+ 
+  Container
+ 
 } from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import EditIcon from '@mui/icons-material/Edit';
@@ -34,7 +31,6 @@ import playlistStore from '../stores/playlistStore';
 
 const PlaylistsList = observer(() => { {
   const user = useContext(UserContext);
-  const [playlists, setPlaylists] = useState<Playlist[]>([]);
   const [editDialogOpen, setEditDialogOpen] = useState(false);
   const [editName, setEditName] = useState('');
   const [editId, setEditId] = useState<string | null>(null);
@@ -79,34 +75,34 @@ const PlaylistsList = observer(() => { {
   };
 
   // הפונקציה שמייצרת צבע רקע רנדומלי עדין לכל פלייליסט
-  const getPlaylistColor = (id: string) => {
-    // יוצרים צבע עדין מבוסס על ה-ID של הפלייליסט
-    const colors = [
-      '#f3e5f5', // סגול עדין
-      '#e8f5e9', // ירוק עדין
-      '#e3f2fd', // כחול עדין
-      '#fff8e1', // צהוב עדין
-      '#fce4ec', // ורוד עדין
-      '#f1f8e9', // ירוק-לימון עדין
-      '#e0f7fa', // תכלת עדין
-      '#fff3e0'  // כתום עדין
-    ];
+  // const getPlaylistColor = (id: string) => {
+  //   // יוצרים צבע עדין מבוסס על ה-ID של הפלייליסט
+  //   const colors = [
+  //     '#f3e5f5', // סגול עדין
+  //     '#e8f5e9', // ירוק עדין
+  //     '#e3f2fd', // כחול עדין
+  //     '#fff8e1', // צהוב עדין
+  //     '#fce4ec', // ורוד עדין
+  //     '#f1f8e9', // ירוק-לימון עדין
+  //     '#e0f7fa', // תכלת עדין
+  //     '#fff3e0'  // כתום עדין
+  //   ];
     
     // בדיקה אם ה-ID הוא מחרוזת
-    if (typeof id !== 'string') {
-      // אם לא, נשתמש במספר קבוע
-      return colors[0];
-    }
+  //   if (typeof id !== 'string') {
+  //     // אם לא, נשתמש במספר קבוע
+  //     return colors[0];
+  //   }
     
-    try {
-      // משתמשים בתו האחרון של ה-ID כדי לבחור צבע
-      const sum = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-      return colors[sum % colors.length];
-    } catch (error) {
-      // אם יש שגיאה, נחזיר צבע ברירת מחדל
-      return colors[0];
-    }
-  };
+  //   try {
+  //     // משתמשים בתו האחרון של ה-ID כדי לבחור צבע
+  //     const sum = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  //     return colors[sum % colors.length];
+  //   } catch (error) {
+  //     // אם יש שגיאה, נחזיר צבע ברירת מחדל
+  //     return colors[0];
+  //   }
+  // };
 
   return (
     <Container sx={{ py: 3 }}>

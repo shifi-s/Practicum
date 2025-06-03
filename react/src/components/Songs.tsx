@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from "react";
-import axios from "axios";
+
 import { 
   Button, 
   Typography, 
-  Grid2 as Grid, 
+ 
   Box, 
   Alert, 
   Snackbar, 
@@ -13,23 +13,22 @@ import {
   Fade,
   Grow
 } from "@mui/material";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import {  Outlet, useNavigate } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 import songStore from "../stores/songsStore";
 import { UserContext } from "./userContext";
 import { useModal } from "./modalContext"; // ייבוא הקונטקסט החדש
 import { 
   Add, 
-  MusicNote, 
+ 
   ErrorOutline 
 } from "@mui/icons-material";
 import ShowSongs from "./showSongs";
 import think from "../assets/think.gif";
 
 const Songs = observer(() => {
-  const [isSearch, setIsSearch] = useState("");
+  const [isSearch] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const apiUrl = "https://localhost:7265";
   const userContext = useContext(UserContext);
   
   const { user } = userContext!;

@@ -17,7 +17,6 @@ import {
   IconButton,
   Fade
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import { UserContext } from "./userContext";
 import { useModal } from "./modalContext"; // ייבוא הקונטקסט החדש
 import { User } from "../models/User";
@@ -51,7 +50,6 @@ const Register = ({onClose}:{onClose:Function}) => {
     },
   });
 
-  const navigate = useNavigate();
 
   const onSubmit = async (data: { name: string; email: string; password: string }) => {
     if (!agreed) {
@@ -80,7 +78,7 @@ const Register = ({onClose}:{onClose:Function}) => {
 
   const registerUser = async (name: string, email: string, password: string) => {
     try {
-      const response = await axios.post("https://localhost:7265/api/auth/register", {
+      const response = await axios.post("https://nonstopmusicserver.onrender.com//api/auth/register", {
         UserName: name,
         email,
         password,

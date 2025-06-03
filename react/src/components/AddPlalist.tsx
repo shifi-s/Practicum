@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { 
   Modal, 
   Box, 
@@ -16,7 +16,7 @@ import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import CloseIcon from '@mui/icons-material/Close';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import axios from 'axios';
+
 import { useNavigate } from 'react-router';
 import { UserContext } from './userContext';
 import playlistStore from '../stores/playlistStore';
