@@ -74,7 +74,7 @@ export default function PlaylistSongs() {
   // Load playlist data
   useEffect(() => {
     if (!id) return
-
+ setSongs([]);
     // Load playlist songs
     axios
       .get(`${apiUrl}/api/playlists/${id}/songs`)
