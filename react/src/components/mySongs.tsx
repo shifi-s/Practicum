@@ -1,4 +1,4 @@
-import  { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { UserContext } from './userContext';
 import {
@@ -14,28 +14,23 @@ import {
   Button,
   TextField,
   Box,
- 
   Container
- 
 } from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FolderIcon from '@mui/icons-material/Folder';
 import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { Playlist } from '../models/playlist';
 import { observer } from 'mobx-react-lite';
 import playlistStore from '../stores/playlistStore';
 
-
-const PlaylistsList = observer(() => { {
+const PlaylistsList = observer(() => {
   const user = useContext(UserContext);
   const [editDialogOpen, setEditDialogOpen] = useState(false);
   const [editName, setEditName] = useState('');
   const [editId, setEditId] = useState<string | null>(null);
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
-  // משתני מצב חדשים למודל אישור מחיקה
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
   const [playlistToDelete, setPlaylistToDelete] = useState<string | null>(null);
 
@@ -43,7 +38,7 @@ const PlaylistsList = observer(() => { {
 
   useEffect(() => {
     if (user?.user?.id) {
-    playlistStore.fetchPlaylists(user.user.id)  
+      playlistStore.fetchPlaylists(user.user.id);
     }
   }, [user]);
 
@@ -54,11 +49,10 @@ const PlaylistsList = observer(() => { {
 
   const confirmDelete = () => {
     if (playlistToDelete) {
-      playlistStore.deletePlaylist(playlistToDelete)
-
-          setOpenDeleteDialog(false);
-          setPlaylistToDelete(null);
-            }
+      playlistStore.deletePlaylist(playlistToDelete);
+      setOpenDeleteDialog(false);
+      setPlaylistToDelete(null);
+    }
   };
 
   const handleEditClick = (playlist: Playlist) => {
@@ -69,57 +63,28 @@ const PlaylistsList = observer(() => { {
 
   const handleEditSave = () => {
     if (!editId) return;
-   playlistStore.updatePlaylist(editId, editName)
-        setEditDialogOpen(false);
+    playlistStore.updatePlaylist(editId, editName);
+    setEditDialogOpen(false);
     setEditName('');
   };
 
-  // הפונקציה שמייצרת צבע רקע רנדומלי עדין לכל פלייליסט
-  // const getPlaylistColor = (id: string) => {
-  //   // יוצרים צבע עדין מבוסס על ה-ID של הפלייליסט
-  //   const colors = [
-  //     '#f3e5f5', // סגול עדין
-  //     '#e8f5e9', // ירוק עדין
-  //     '#e3f2fd', // כחול עדין
-  //     '#fff8e1', // צהוב עדין
-  //     '#fce4ec', // ורוד עדין
-  //     '#f1f8e9', // ירוק-לימון עדין
-  //     '#e0f7fa', // תכלת עדין
-  //     '#fff3e0'  // כתום עדין
-  //   ];
-    
-    // בדיקה אם ה-ID הוא מחרוזת
-  //   if (typeof id !== 'string') {
-  //     // אם לא, נשתמש במספר קבוע
-  //     return colors[0];
-  //   }
-    
-  //   try {
-  //     // משתמשים בתו האחרון של ה-ID כדי לבחור צבע
-  //     const sum = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  //     return colors[sum % colors.length];
-  //   } catch (error) {
-  //     // אם יש שגיאה, נחזיר צבע ברירת מחדל
-  //     return colors[0];
-  //   }
-  // };
-
   return (
-    <Container sx={{ py: 3 }}>
+    <Container sx={{ direction: "rtl", py: 25, pt: 3 ,marginTop: 10 }}>
       <Outlet />
       
       <Box 
         sx={{ 
+          direction: 'rtl',
           mb: 4, 
           p: 3,
-          background: 'linear-gradient(135deg, #1976d2, #64b5f6)',
+          background: 'linear-gradient(135deg, #667eea, #764ba2)',
           borderRadius: 2,
           color: 'white',
-          boxShadow: '0 4px 20px rgba(25, 118, 210, 0.25)'
+          boxShadow: '0 4px 20px rgba(102, 126, 234, 0.25)'
         }}
       >
         <Typography variant="h5" fontWeight="bold" sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-          <PlaylistPlayIcon sx={{ mr: 1, fontSize: 30 }} />
+          <PlaylistPlayIcon sx={{ ml: 1, fontSize: 30 }} />
           רשימות ההשמעה שלי
         </Typography>
         <Typography variant="body1">
@@ -147,7 +112,7 @@ const PlaylistsList = observer(() => { {
               transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
               borderRadius: 2,
               overflow: 'hidden',
-              height: 160, // גובה קבוע לכל הכרטיסים
+              height: 160, // גובה קבוע חזרה
               position: 'relative',
               boxShadow: hoveredCard === p.id 
                 ? '0px 10px 25px rgba(0, 0, 0, 0.2)' 
@@ -160,12 +125,12 @@ const PlaylistsList = observer(() => { {
                 left: 0,
                 right: 0,
                 height: '5px',
-                background: 'linear-gradient(to right, #1976d2, #64b5f6)',
+                background: 'linear-gradient(to left, #667eea, #764ba2)',
                 opacity: hoveredCard === p.id ? 1 : 0.7,
                 transition: 'opacity 0.3s ease'
               }
             }}
-            onClick={() => navigate(`/playlists/${p.id}`)}
+            onClick={() => navigate(`/myPlaylists/${p.id}`)}
           >
             <CardContent sx={{ 
               p: 3,
@@ -174,63 +139,78 @@ const PlaylistsList = observer(() => { {
               height: '100%',
               position: 'relative',
               zIndex: 1,
-              background: 'linear-gradient(135deg, #ffffff, #f5f8ff)'
+              background: 'linear-gradient(135deg, #ffffff, #f5f8ff)',
+              direction: 'rtl',
+              alignItems: 'center',
+              textAlign: 'center'
             }}>
-              <Box sx={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'space-between',
-                mb: 2,
-                width: '100%' // וודא שהקופסה תתפוס את כל הרוחב
-              }}>
-                <Box sx={{ 
+              {/* אייקון תיקיה גדול */}
+              <Box 
+                sx={{ 
+                  width: 80, 
+                  height: 80, 
+                  borderRadius: '16px', 
                   display: 'flex', 
                   alignItems: 'center', 
-                  gap: 1.5,
-                  maxWidth: 'calc(100% - 80px)' // שם הרחבה לא יחרוג לאיזור הכפתורים
-                }}>
-                  <Box 
-                    sx={{ 
-                      width: 48, 
-                      height: 48, 
-                      minWidth: 48, // מניעת הקטנת האייקון
-                      borderRadius: '12px', 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      justifyContent: 'center',
-                      background: 'linear-gradient(135deg, #1976d2, #64b5f6)',
-                      color: 'white',
-                      boxShadow: '0 4px 10px rgba(25, 118, 210, 0.2)'
-                    }}
-                  >
-                    <FolderIcon fontSize="medium" />
-                  </Box>
-                  <Typography 
-                    variant="h6" 
-                    sx={{ 
-                      fontWeight: 600,
-                      fontSize: '1.1rem',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap',
-                      width: '100%' // מילוי הרוחב הזמין
-                    }}
-                  >
-                    {p.name}
-                  </Typography>
-                </Box>
+                  justifyContent: 'center',
+                  background: 'linear-gradient(135deg, #667eea, #764ba2)',
+                  color: 'white',
+                  boxShadow: '0 6px 16px rgba(102, 126, 234, 0.3)',
+                  mb: 2,
+                  transition: 'transform 0.3s ease',
+                  transform: hoveredCard === p.id ? 'scale(1.1)' : 'scale(1)'
+                }}
+              >
+                <FolderIcon sx={{ fontSize: 40 }} />
+              </Box>
+              
+              {/* שם הפלייליסט */}
+              <Typography 
+                variant="h6" 
+                sx={{ 
+                  fontWeight: 600,
+                  fontSize: '1.1rem',
+                  lineHeight: 1.2,
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  textAlign: 'center',
+                  width: '100%',
+                  mb: 1,
+                  minHeight: '2.4em' // מקום לשתי שורות
+                }}
+              >
+                {p.name}
+              </Typography>
+              
+              {/* טקסט תחתון */}
+              <Typography 
+                variant="body2" 
+                color="text.secondary"
+                sx={{ 
+                  fontSize: '0.85rem',
+                  mt: 'auto'
+                }}
+              >
+                פלייליסט אישי
+              </Typography>
 
+              {/* כפתורי פעולה */}
+              {hoveredCard === p.id && (
                 <Box 
                   sx={{ 
-                    opacity: hoveredCard === p.id ? 1 : 0,
-                    transition: 'opacity 0.2s ease',
+                    position: 'absolute',
+                    top: 8,
+                    right: 8,
                     display: 'flex',
                     gap: 0.5,
-                    minWidth: 72, // רוחב מינימלי לכפתורים
-                    justifyContent: 'flex-end'
+                    opacity: hoveredCard === p.id ? 1 : 0,
+                    transition: 'opacity 0.2s ease'
                   }}
                 >
-                  <Tooltip title="ערוך">
+                  <Tooltip title="ערוך" placement="top">
                     <IconButton 
                       size="small" 
                       onClick={e => {
@@ -239,16 +219,18 @@ const PlaylistsList = observer(() => { {
                       }}
                       sx={{
                         backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                        width: 28,
+                        height: 28,
                         '&:hover': {
                           backgroundColor: '#e3f2fd'
                         }
                       }}
                     >
-                      <EditIcon fontSize="small" sx={{ color: '#1976d2' }} />
+                      <EditIcon sx={{ fontSize: 16, color: '#667eea' }} />
                     </IconButton>
                   </Tooltip>
 
-                  <Tooltip title="מחק">
+                  <Tooltip title="מחק" placement="top">
                     <IconButton 
                       size="small" 
                       onClick={e => {
@@ -257,38 +239,18 @@ const PlaylistsList = observer(() => { {
                       }}
                       sx={{
                         backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                        width: 28,
+                        height: 28,
                         '&:hover': {
                           backgroundColor: '#ffebee'
                         }
                       }}
                     >
-                      <DeleteIcon fontSize="small" color="error" />
+                      <DeleteIcon sx={{ fontSize: 16, color: '#ef4444' }} />
                     </IconButton>
                   </Tooltip>
                 </Box>
-              </Box>
-              
-              <Box sx={{ 
-                flex: 1,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'flex-end'
-              }}>
-                <Typography 
-                  variant="body2" 
-                  color="text.secondary"
-                  sx={{ 
-                    mt: 'auto', 
-                    fontSize: '0.85rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 0.5
-                  }}
-                >
-                  <PlayArrowIcon fontSize="small" sx={{ color: '#1976d2' }} />
-                  פתח פלייליסט
-                </Typography>
-              </Box>
+              )}
             </CardContent>
           </Card>
         ))}
@@ -296,19 +258,19 @@ const PlaylistsList = observer(() => { {
         {/* כפתור יצירת פלייליסט */}
         <Card
           sx={{
-            height: 160, // גובה קבוע זהה לכרטיסי הפלייליסט
+            height: 160, // גובה קבוע זהה
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer',
             borderRadius: 2,
             background: 'linear-gradient(135deg, #f5f8ff, #e3f2fd)',
-            border: '2px dashed rgba(25, 118, 210, 0.4)',
+            border: '2px dashed rgba(102, 126, 234, 0.4)',
             transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
             boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.05)',
             '&:hover': {
               transform: 'translateY(-5px)',
-              boxShadow: '0px 8px 20px rgba(25, 118, 210, 0.15)',
+              boxShadow: '0px 8px 20px rgba(102, 126, 234, 0.15)',
               background: 'linear-gradient(135deg, #e3f2fd, #bbdefb)'
             }
           }}
@@ -316,7 +278,8 @@ const PlaylistsList = observer(() => { {
         >
           <CardContent sx={{ 
             p: 3,
-            textAlign: 'center'
+            textAlign: 'center',
+            direction: 'rtl'
           }}>
             <Box
               sx={{
@@ -326,10 +289,10 @@ const PlaylistsList = observer(() => { {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: 'linear-gradient(135deg, #1976d2, #64b5f6)',
+                background: 'linear-gradient(135deg, #667eea, #764ba2)',
                 color: 'white',
                 margin: '0 auto 16px',
-                boxShadow: '0 4px 10px rgba(25, 118, 210, 0.2)'
+                boxShadow: '0 4px 10px rgba(102, 126, 234, 0.2)'
               }}
             >
               <AddCircleIcon fontSize="large" />
@@ -338,7 +301,7 @@ const PlaylistsList = observer(() => { {
               variant="h6"
               sx={{
                 fontWeight: 600,
-                color: '#1976d2',
+                color: '#667eea',
                 mb: 1
               }}
             >
@@ -367,16 +330,18 @@ const PlaylistsList = observer(() => { {
       >
         <DialogTitle 
           sx={{ 
-            background: 'linear-gradient(135deg, #1976d2, #64b5f6)',
+            direction: "rtl",
+            background: 'linear-gradient(135deg, #667eea, #764ba2)',
             color: 'white',
             pb: 2,
             pt: 2,
-            fontWeight: 600
+            fontWeight: 600,
+            textAlign: 'center'
           }}
         >
           עריכת שם פלייליסט
         </DialogTitle>
-        <DialogContent sx={{ pt: 3, pb: 2, px: 3 }}>
+        <DialogContent sx={{ dir: "rtl", pt: 3, pb: 2, px: 3 }}>
           <TextField
             fullWidth
             label="שם חדש"
@@ -385,13 +350,23 @@ const PlaylistsList = observer(() => { {
             autoFocus
             variant="outlined"
             sx={{
+              direction: 'rtl',
               '& .MuiOutlinedInput-root': {
-                borderRadius: 1
+                borderRadius: 1,
+                '&:hover fieldset': {
+                  borderColor: '#667eea'
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#667eea'
+                }
+              },
+              '& .MuiInputLabel-root.Mui-focused': {
+                color: '#667eea'
               }
             }}
           />
         </DialogContent>
-        <DialogActions sx={{ px: 3, pb: 3 }}>
+        <DialogActions sx={{ px: 3, pb: 3, direction: 'rtl', gap: 1 }}>
           <Button 
             onClick={() => setEditDialogOpen(false)}
             sx={{ 
@@ -407,9 +382,9 @@ const PlaylistsList = observer(() => { {
             sx={{ 
               borderRadius: 4,
               px: 3,
-              background: 'linear-gradient(to right, #1976d2, #64b5f6)',
+              background: 'linear-gradient(to left, #667eea, #764ba2)',
               '&:hover': {
-                background: 'linear-gradient(to right, #1565c0, #42a5f5)'
+                background: 'linear-gradient(to left, #5a6fd8, #6a4190)'
               }
             }}
           >
@@ -432,6 +407,8 @@ const PlaylistsList = observer(() => { {
       >
         <DialogTitle 
           sx={{ 
+            direction: "rtl",
+            textAlign: 'center',
             bgcolor: '#f44336',
             color: 'white',
             py: 2
@@ -439,15 +416,19 @@ const PlaylistsList = observer(() => { {
         >
           אישור מחיקת פלייליסט
         </DialogTitle>
-        <DialogContent sx={{ p: 3, pt: 3 }}>
-          <Typography>
+        <DialogContent sx={{ direction: "rtl", p: 3, pt: 3 }}>
+          <Typography sx={{ textAlign: 'right', mb: 2 }}>
             האם אתה בטוח שברצונך למחוק את הפלייליסט?
           </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+          <Typography 
+            variant="body2" 
+            color="text.secondary" 
+            sx={{ textAlign: 'right' }}
+          >
             פעולה זו תמחק את הפלייליסט וכל השירים שבו לא יהיו זמינים עוד ברשימה זו. פעולה זו לא ניתנת לביטול.
           </Typography>
         </DialogContent>
-        <DialogActions sx={{ px: 3, pb: 3 }}>
+        <DialogActions sx={{ px: 3, pb: 3, direction: 'rtl', gap: 1 }}>
           <Button 
             onClick={() => setOpenDeleteDialog(false)}
             variant="outlined"
@@ -464,8 +445,7 @@ const PlaylistsList = observer(() => { {
             color="error"
             sx={{
               borderRadius: 2,
-              px: 3,
-              ml: 1
+              px: 3
             }}
           >
             מחק
@@ -474,7 +454,6 @@ const PlaylistsList = observer(() => { {
       </Dialog>
     </Container>
   );
-}
-}
-)
+});
+
 export default PlaylistsList;

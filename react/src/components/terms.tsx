@@ -2,7 +2,7 @@ import { Typography, Container, Paper } from "@mui/material";
 
 export default function Terms() {
   return (
-    <Container maxWidth="md" sx={{ mt: 6, mb: 6 }}>
+    <Container maxWidth="md" sx={{direction:"rtl", mt: 6, mb: 6 }}>
       <Paper elevation={3} sx={{ p: 4, borderRadius: 3 }}>
         <Typography variant="h4" fontWeight="bold" gutterBottom align="center">
           תנאי שימוש באתר

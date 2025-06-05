@@ -1,9 +1,9 @@
 import { makeAutoObservable } from "mobx";
 import { Song } from "../models/Song";
 import axios from "axios";
-
+const apiUrl=import.meta.env.VITE_API_URL
 class SongStore {
-apiUrl="https://nonstopmusicserver.onrender.com"
+
 
   songs: Song[] = []; // רשימת השירים
   query: string = ""
@@ -46,7 +46,7 @@ apiUrl="https://nonstopmusicserver.onrender.com"
         return;
     }
     try {
-        await axios.post(`${this.apiUrl}/api/songs`, song, {
+        await axios.post(`${apiUrl}/api/songs`, song, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -67,7 +67,7 @@ apiUrl="https://nonstopmusicserver.onrender.com"
       }
 
       try {
-          await axios.delete(`https://nonstopmusicserver.onrender.com/api/songs/${id}`, {
+          await axios.delete(`${apiUrl}/api/songs/${id}`, {
               headers: {
                   Authorization: `Bearer ${token}`,
               },
@@ -85,14 +85,14 @@ apiUrl="https://nonstopmusicserver.onrender.com"
   const tags=query.split(" ")
     this.songs=this.songs.filter((song) =>(tags.some(tag => song.tags?.includes(tag)) ))
   
-    if(this.songs.length===0){
-      this.fetchSongs();
-      };
+    // if(this.songs.length===0){
+    //   this.fetchSongs();
+    //   };
     }
   // פונקציה להוספת שירים מהשרת
   fetchSongs = async () => {
     try {
-      const response = await axios.get(this.apiUrl + "/api/songs");
+      const response = await axios.get(apiUrl + "/api/songs");
       this.songs=(response.data);
     } catch (err) {
       console.error("Error fetching songs:", err);

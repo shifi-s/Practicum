@@ -5,7 +5,7 @@ import { Song } from '../models/Song';
 
 
 // URL בסיס ל-API
-const API_BASE_URL = 'https://nonstopmusicserver.onrender.com';
+const apiUrl=import.meta.env.VITE_API_URL
 class PlaylistStore {
   // מצב אובזרבבל
   playlists: Playlist[] = [];
@@ -65,7 +65,7 @@ class PlaylistStore {
     
     try {
       const response =  await axios
-      .get(`${API_BASE_URL}/api/playlists?userId=${userId}`)
+      .get(`${apiUrl}/api/playlists?userId=${userId}`)
 
       // עדכון המצב באמצעות runInAction כדי לשמור על אטומיות
       runInAction(() => {
@@ -88,7 +88,7 @@ class PlaylistStore {
     this.setError(null);
   
       try {
-        const response = await axios.post(`${API_BASE_URL}/api/playlists`, { name: name, userId: userId });  
+        const response = await axios.post(`${apiUrl}/api/playlists`, { name: name, userId: userId });  
         
    
       
@@ -118,7 +118,7 @@ class PlaylistStore {
     
     try {
       await axios.put(
-        `${API_BASE_URL}/api/playlists/${playlistId}`, 
+        `${apiUrl}/api/playlists/${playlistId}`, 
         name, 
         { headers: { 'Content-Type': 'application/json' } }
       );
@@ -147,7 +147,7 @@ class PlaylistStore {
     this.setError(null);
     
     try {
-      await axios.delete(`${API_BASE_URL}/api/playlists/${playlistId}`);
+      await axios.delete(`${apiUrl}/api/playlists/${playlistId}`);
       
       runInAction(() => {
         // מחיקת הפלייליסט מהמערך
@@ -176,7 +176,7 @@ class PlaylistStore {
     this.setError(null);
     
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/playlists/${playlistId}/songs`);
+      const response = await axios.get(`${apiUrl}/api/playlists/${playlistId}/songs`);
       
       runInAction(() => {
         this.playlistSongs[playlistId] = response.data;
@@ -199,13 +199,13 @@ class PlaylistStore {
     
     try {
       await axios.post(
-        `${API_BASE_URL}/api/playlists/${playlistId}/addSong`, 
+        `${apiUrl}/api/playlists/${playlistId}/addSong`, 
         songId, 
         { headers: { 'Content-Type': 'application/json' } }
       );
       
       // קבלת מידע מלא על השיר שנוסף
-      const songResponse = await axios.get(`${API_BASE_URL}/api/songs/${songId}`);
+      const songResponse = await axios.get(`${apiUrl}/api/songs/${songId}`);
       
       runInAction(() => {
         // אם עדיין אין רשימת שירים לפלייליסט זה, נייצר אחת חדשה
@@ -233,7 +233,7 @@ class PlaylistStore {
     this.setError(null);
     
     try {
-      await axios.delete(`${API_BASE_URL}/api/playlists/${playlistId}/removeSong/${songId}`);
+      await axios.delete(`${apiUrl}/api/playlists/${playlistId}/removeSong/${songId}`);
       
       runInAction(() => {
         // אם קיימת רשימת שירים לפלייליסט זה

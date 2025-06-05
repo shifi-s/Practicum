@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Jungle_Single.Core.DTOsModels
 {
-    public class updateUser
+    public class UpdateUser
     {
         public string Name { get; set; }
         public string Email { get; set; }

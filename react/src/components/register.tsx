@@ -41,7 +41,7 @@ const Register = ({onClose}:{onClose:Function}) => {
   
   // שימוש בקונטקסט המודלים
   const { openModal } = useModal();
-
+const apiUrl=import.meta.env.VITE_API_URL
   const { register, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       name: "",
@@ -78,12 +78,13 @@ const Register = ({onClose}:{onClose:Function}) => {
 
   const registerUser = async (name: string, email: string, password: string) => {
     try {
-      const response = await axios.post("https://nonstopmusicserver.onrender.com//api/auth/register", {
+      const response = await axios.post(`${apiUrl}/api/auth/register`, {
         UserName: name,
         email,
         password,
       });
       sessionStorage.setItem("token", response.data.token);
+      localStorage.setItem("user", JSON.stringify(response.data.newUser));
       return response.data;
     } catch (error) {
       console.error("Registration failed:", error);

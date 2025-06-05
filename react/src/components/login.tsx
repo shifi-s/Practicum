@@ -34,7 +34,7 @@ const Login = ({onClose}:{onClose:Function}) => {
   const [error, setError] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
-  
+  const apiUrl=import.meta.env.VITE_API_URL
   // שימוש בקונטקסט המודלים
   const { openModal } = useModal();
   
@@ -52,15 +52,18 @@ const Login = ({onClose}:{onClose:Function}) => {
   
   const onSubmit = async (data: { email: string; password: string }) => {
     try {
-      const response = await axios.post("https://nonstopmusicserver.onrender.com/api/auth/login", data);
+      
+      const response = await axios.post(`${apiUrl}/api/auth/login`, data);
       if (response?.data?.token) {
         sessionStorage.setItem("token", response.data.token);
+        
         const user: User = {
           name: response.data.user.userName,
           email: response.data.user.email,
           role: response.data.user.role,
           id: response.data.user.id,
         };
+        localStorage.setItem("user", JSON.stringify(user));
         setUser(user);
         setIsOpen(false);
         onClose();

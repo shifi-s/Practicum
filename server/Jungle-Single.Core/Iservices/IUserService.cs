@@ -9,6 +9,7 @@ namespace Jungle_Single.Core.Iservices
 {
     public interface IUserService
     {
+        Task<User> getUserById(int id);
         Task<IEnumerable<User>> GetAllUsersAsync();
         Task<User?> GetUserByEmailAsync(string email);
         Task AddUserAsync(User user);

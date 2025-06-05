@@ -1,20 +1,21 @@
 import { Outlet } from "react-router";
 import { UserProvider } from "./userContext";
 import Header from "./Header";
-
 import { ModalProvider } from "./modalContext";
+// import Footer from "./Footer";
+// import { Box } from "@mui/material";
 
 const AppLayOut = () => {
     return (
-        
-        <UserProvider>
-            <ModalProvider>
-            <Header />
-            <Outlet />
-            </ModalProvider>
-        </UserProvider>
-        
-        
+        // <Box sx={{ margin: 0, padding: 0, width: "100%" }}>
+            <UserProvider>
+                <ModalProvider>
+                    <Header />
+                    <Outlet />
+                     {/* <Footer/>  */}
+                </ModalProvider>
+            </UserProvider>
+        // </Box>
     );
 };
 

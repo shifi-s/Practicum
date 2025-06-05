@@ -50,5 +50,10 @@ namespace Jungle_Single.Data.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<User?> GetByIdAsync(int id)
+        {
+            return await Task.Run(() => _context.Users.FirstOrDefault(u => u.Id == id));
+        }
     }
 }

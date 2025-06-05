@@ -5,25 +5,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 
-public class TranscriptionService
+public class TranscriptionService(HttpClient httpClient, IConfiguration config, AppDbContext context)
 {
-    private readonly HttpClient _httpClient;
-    private readonly IConfiguration _config;
-    private readonly AppDbContext _context;
-
-    public TranscriptionService(HttpClient httpClient, IConfiguration config, AppDbContext context)
-    {
-        _httpClient = httpClient;
-        _config = config;
-        _context = context;
-    }
+    private readonly HttpClient _httpClient = httpClient;
+    private readonly IConfiguration _config = config;
+    private readonly AppDbContext _context = context;
 
     public async Task<string> GetOrTranscribeAndStructureLyricsAsync(string audioUrl)
     {
-        var song = await _context.Songs.FirstOrDefaultAsync(s => s.AudioUrl == audioUrl);
-        if (song == null)
-            throw new Exception("השיר לא נמצא במסד הנתונים");
-
+        var song = await _context.Songs.FirstOrDefaultAsync(s => s.AudioUrl == audioUrl) ?? throw new Exception("השיר לא נמצא במסד הנתונים");
         if (!string.IsNullOrWhiteSpace(song.Lyrics))
             return song.Lyrics;
 

@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { Tooltip, IconButton, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from "@mui/material";
 import {Delete} from "@mui/icons-material"
 
+
 const DeleteSong = ({id}:{id:number}) => {
+  const apiUrl=import.meta.env.VITE_API_URL
       const[toDelete,setToDelete]=useState(false)
     const [, setMessage] = useState("");
 const navigate=useNavigate()
@@ -17,7 +19,7 @@ const navigate=useNavigate()
         }
 
         try {
-            await axios.delete(`https://nonstopmusicserver.onrender.com/api/songs/${id}`, {
+            await axios.delete(`${apiUrl}/api/songs/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

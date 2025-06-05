@@ -1,7 +1,6 @@
-
 import { useState, useEffect, useRef } from "react"
 import axios from "axios"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import {
   Button,
   Dialog,
@@ -25,6 +24,8 @@ import {
   InputAdornment,
   Fade,
   Chip,
+  Card,
+  CardContent,
 } from "@mui/material"
 import PlayArrowIcon from "@mui/icons-material/PlayArrow"
 import PauseIcon from "@mui/icons-material/Pause"
@@ -37,6 +38,7 @@ import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay"
 import HeadphonesIcon from "@mui/icons-material/Headphones"
 import ArrowBackIcon from "@mui/icons-material/ArrowBack"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight"
 
 // Define Song interface
 interface Song {
@@ -48,6 +50,7 @@ interface Song {
 
 export default function PlaylistSongs() {
   const { id } = useParams<{ id: string }>()
+  const navigate = useNavigate()
   const [songs, setSongs] = useState<Song[]>([])
   const [currentIndex, setCurrentIndex] = useState<number | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -59,9 +62,14 @@ export default function PlaylistSongs() {
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false)
   const [songToDelete, setSongToDelete] = useState<string | null>(null)
 
-  const apiUrl = "https://nonstopmusicserver.onrender.com"
+  const apiUrl = import.meta.env.VITE_API_URL
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const currentSongRef = useRef<HTMLDivElement | null>(null)
+
+  // Navigate back to playlists
+  const handleBackToPlaylists = () => {
+    navigate('/myPlaylists')
+  }
 
   // Load playlist data
   useEffect(() => {
@@ -223,12 +231,40 @@ export default function PlaylistSongs() {
     }
   }
 
-  const getSongColor = (index: number) => {
-    return index % 2 === 0 ? "#ffffff" : "#fafafa"
-  }
-
   return (
-    <Box sx={{ maxWidth: 900, mx: "auto", px: { xs: 2, md: 4 }, py: 3 }}>
+    <Box sx={{ maxWidth: 900, mx: "auto", px: { xs: 2, md: 4 }, py: 3, pt: 12 }}>
+      
+      {/* כפתור חזרה */}
+      <Box sx={{ mb: 3, position:"fixed", top: 120, right: 30 }}>
+      <Tooltip title={"חזרה לפלייליסטים"}><IconButton
+          onClick={handleBackToPlaylists}
+          
+          sx={{
+            color: '#667eea',
+            fontWeight: 600,
+            fontSize: '0.95rem',
+            textTransform: 'none',
+            borderRadius: 2,
+            px: 2,
+            py: 1,
+            border: '1px solid rgba(102, 126, 234, 0.2)',
+            background: 'rgba(102, 126, 234, 0.05)',
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              background: 'rgba(102, 126, 234, 0.1)',
+              borderColor: '#667eea',
+              transform: 'translateX(4px)'
+            }
+          }}
+        >
+     
+          <KeyboardArrowRightIcon />
+       
+    
+        </IconButton>
+        </Tooltip>
+      </Box>
+
       {/* כותרת ומידע על הפלייליסט */}
       <Paper
         elevation={0}
@@ -236,7 +272,7 @@ export default function PlaylistSongs() {
           p: 3,
           mb: 4,
           borderRadius: 3,
-          background: "linear-gradient(135deg, #1976d2, #64b5f6)",
+          background: "linear-gradient(135deg, #667eea, #764ba2)",
           color: "white",
           position: "relative",
           overflow: "hidden",
@@ -289,121 +325,147 @@ export default function PlaylistSongs() {
         </Box>
       </Paper>
 
-      {/* רשימת שירים */}
+      {/* רשימת שירים בגריד */}
       {songs.length > 0 ? (
-        <Paper
-          elevation={3}
-          sx={{
-            borderRadius: 3,
-            overflow: "hidden",
-            boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
+        <Box
+          display="grid"
+          gridTemplateColumns={{
+            xs: 'repeat(1, 1fr)',
+            sm: 'repeat(2, 1fr)',
+            md: 'repeat(3, 1fr)',
+            lg: 'repeat(4, 1fr)'
           }}
+          gap={2.5}
+          mb={4}
         >
-          <List sx={{ width: "100%", p: 0 }}>
-            {songs.map((song, index) => (
-              <Fade key={song.id} in={true} timeout={300} style={{ transitionDelay: `${index * 50}ms` }}>
-                <Box>
-                  <Box
-                    ref={currentIndex === index ? currentSongRef : null}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="space-between"
-                    sx={{
-                      backgroundColor:
-                        currentIndex === index
-                          ? "linear-gradient(to right, rgba(25, 118, 210, 0.1), rgba(100, 181, 246, 0.1))"
-                          : getSongColor(index),
-                      px: 2,
-                      py: 1.5,
-                      transition: "all 0.3s ease",
-                      position: "relative",
-                      overflow: "hidden",
-                      "&:hover": {
-                        backgroundColor:
-                          currentIndex === index
-                            ? "linear-gradient(to right, rgba(25, 118, 210, 0.15), rgba(100, 181, 246, 0.15))"
-                            : "rgba(0, 0, 0, 0.03)",
-                      },
+          {songs.map((song, index) => (
+            <Fade key={song.id} in={true} timeout={300} style={{ transitionDelay: `${index * 50}ms` }}>
+              <Card
+                ref={currentIndex === index ? currentSongRef : null}
+                sx={{
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                  borderRadius: 2,
+                  overflow: 'hidden',
+                  height: 160,
+                  position: 'relative',
+                  boxShadow: currentIndex === index 
+                    ? '0px 10px 25px rgba(102, 126, 234, 0.3)' 
+                    : '0px 4px 15px rgba(0, 0, 0, 0.1)',
+                  transform: currentIndex === index ? 'translateY(-4px) scale(1.02)' : 'translateY(0)',
+                  border: currentIndex === index ? '2px solid #667eea' : '2px solid transparent',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0px 8px 20px rgba(102, 126, 234, 0.2)',
+                  }
+                }}
+                onClick={() => togglePlayPause(index)}
+              >
+                <CardContent sx={{ 
+                  p: 3,
+                  display: 'flex', 
+                  flexDirection: 'column',
+                  height: '100%',
+                  position: 'relative',
+                  background: currentIndex === index 
+                    ? 'linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05))'
+                    : 'linear-gradient(135deg, #ffffff, #f5f8ff)',
+                  direction: 'rtl',
+                  alignItems: 'center',
+                  textAlign: 'center'
+                }}>
+                  {/* אייקון נגינה במרכז */}
+                  <Box 
+                    sx={{ 
+                      width: 60, 
+                      height: 60, 
+                      borderRadius: '50%', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      background: currentIndex === index && isPlaying
+                        ? 'linear-gradient(135deg, #667eea, #764ba2)'
+                        : 'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))',
+                      color: currentIndex === index && isPlaying ? 'white' : '#667eea',
+                      boxShadow: '0 4px 10px rgba(102, 126, 234, 0.2)',
+                      mb: 2,
+                      transition: 'all 0.3s ease'
                     }}
                   >
-                    {currentIndex === index && (
-                      <Box
-                        sx={{
-                          position: "absolute",
-                          left: 0,
-                          top: 0,
-                          width: 4,
-                          height: "100%",
-                          bgcolor: "#1976d2",
-                        }}
-                      />
+                    {currentIndex === index && isPlaying ? (
+                      <PauseIcon sx={{ fontSize: 28 }} />
+                    ) : (
+                      <PlayArrowIcon sx={{ fontSize: 28 }} />
                     )}
-
-                    <Box display="flex" alignItems="center" gap={2} flex={1}>
-                      <Avatar
-                        sx={{
-                          width: 40,
-                          height: 40,
-                          bgcolor: currentIndex === index ? "#bbdefb" : "#e0e0e0",
-                        }}
-                      >
-                        <MusicNoteIcon color={currentIndex === index ? "primary" : "action"} />
-                      </Avatar>
-
-                      <Box>
-                        <Typography
-                          fontWeight={currentIndex === index ? 600 : 500}
-                          color={currentIndex === index ? "primary" : "textPrimary"}
-                        >
-                          {song.title}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          {song.artist}
-                        </Typography>
-                      </Box>
-                    </Box>
-
-                    <Box display="flex" alignItems="center" gap={1}>
-                      <Tooltip title={currentIndex === index && isPlaying ? "השהה" : "נגן"}>
-                        <IconButton
-                          onClick={() => togglePlayPause(index)}
-                          sx={{
-                            bgcolor: currentIndex === index && isPlaying ? "rgba(25, 118, 210, 0.1)" : "transparent",
-                            "&:hover": {
-                              bgcolor:
-                                currentIndex === index && isPlaying ? "rgba(25, 118, 210, 0.2)" : "rgba(0, 0, 0, 0.04)",
-                            },
-                          }}
-                        >
-                          {currentIndex === index && isPlaying ? (
-                            <PauseIcon color="primary" />
-                          ) : (
-                            <PlayArrowIcon color={currentIndex === index ? "primary" : "action"} />
-                          )}
-                        </IconButton>
-                      </Tooltip>
-
-                      <Tooltip title="מחק מהפלייליסט">
-                        <IconButton
-                          onClick={() => openDeleteConfirmation(String(song.id))}
-                          sx={{
-                            "&:hover": {
-                              color: "#f44336",
-                              bgcolor: "rgba(244, 67, 54, 0.08)",
-                            },
-                          }}
-                        >
-                          <DeleteIcon fontSize="small" />
-                        </IconButton>
-                      </Tooltip>
-                    </Box>
                   </Box>
-                  {index < songs.length - 1 && <Divider />}
-                </Box>
-              </Fade>
-            ))}
-          </List>
-        </Paper>
+                  
+                  {/* שם השיר */}
+                  <Typography 
+                    variant="h6" 
+                    sx={{ 
+                      fontWeight: 600,
+                      fontSize: '1rem',
+                      lineHeight: 1.2,
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      display: '-webkit-box',
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: 'vertical',
+                      textAlign: 'center',
+                      width: '100%',
+                      mb: 0.5,
+                      minHeight: '2.4em',
+                      color: currentIndex === index ? '#667eea' : 'inherit'
+                    }}
+                  >
+                    {song.title}
+                  </Typography>
+                  
+                  {/* שם האמן */}
+                  <Typography 
+                    variant="body2" 
+                    color="text.secondary"
+                    sx={{ 
+                      fontSize: '0.875rem',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      whiteSpace: 'nowrap',
+                      width: '100%',
+                      textAlign: 'center'
+                    }}
+                  >
+                    {song.artist}
+                  </Typography>
+
+                  {/* כפתור מחיקה */}
+                  <IconButton 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openDeleteConfirmation(String(song.id));
+                    }}
+                    sx={{
+                      position: 'absolute',
+                      top: 8,
+                      right: 8,
+                      width: 32,
+                      height: 32,
+                      backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                      opacity: 0.7,
+                      transition: 'opacity 0.2s ease',
+                      '&:hover': {
+                        opacity: 1,
+                        backgroundColor: '#ffebee',
+                        color: '#f44336'
+                      }
+                    }}
+                  >
+                    <DeleteIcon sx={{ fontSize: 18 }} />
+                  </IconButton>
+                </CardContent>
+              </Card>
+            </Fade>
+          ))}
+        </Box>
       ) : (
         <Paper
           elevation={2}
@@ -430,11 +492,11 @@ export default function PlaylistSongs() {
               px: 3,
               py: 1,
               borderRadius: 2,
-              background: "linear-gradient(135deg, #1976d2, #64b5f6)",
-              boxShadow: "0 4px 15px rgba(25, 118, 210, 0.3)",
+              background: "linear-gradient(135deg, #667eea, #764ba2)",
+              boxShadow: "0 4px 15px rgba(102, 126, 234, 0.3)",
               "&:hover": {
-                boxShadow: "0 6px 20px rgba(25, 118, 210, 0.4)",
-                background: "linear-gradient(135deg, #1565c0, #42a5f5)",
+                boxShadow: "0 6px 20px rgba(102, 126, 234, 0.4)",
+                background: "linear-gradient(135deg, #5a6fd8, #6a4190)",
               },
             }}
           >
@@ -461,14 +523,14 @@ export default function PlaylistSongs() {
                 sx={{
                   width: 56,
                   height: 56,
-                  bgcolor: "#bbdefb",
+                  bgcolor: "rgba(102, 126, 234, 0.2)",
                 }}
               >
-                <MusicNoteIcon color="primary" fontSize="large" />
+                <MusicNoteIcon sx={{ color: "#667eea" }} fontSize="large" />
               </Avatar>
 
               <Box>
-                <Typography variant="h6" fontWeight="bold" color="primary">
+                <Typography variant="h6" fontWeight="bold" sx={{ color: "#667eea" }}>
                   {songs[currentIndex].title}
                 </Typography>
                 <Typography variant="subtitle1">{songs[currentIndex].artist}</Typography>
@@ -531,9 +593,9 @@ export default function PlaylistSongs() {
                 <IconButton
                   onClick={() => setLoopPlaylist((prev) => !prev)}
                   sx={{
-                    bgcolor: loopPlaylist ? "rgba(25, 118, 210, 0.1)" : "rgba(0, 0, 0, 0.03)",
+                    bgcolor: loopPlaylist ? "rgba(102, 126, 234, 0.1)" : "rgba(0, 0, 0, 0.03)",
                     "&:hover": {
-                      bgcolor: loopPlaylist ? "rgba(25, 118, 210, 0.15)" : "rgba(0, 0, 0, 0.08)",
+                      bgcolor: loopPlaylist ? "rgba(102, 126, 234, 0.15)" : "rgba(0, 0, 0, 0.08)",
                     },
                   }}
                 >
@@ -545,7 +607,7 @@ export default function PlaylistSongs() {
         </Slide>
       )}
 
-      {/* כפתור פעולה בזמן השמעה */}
+      {/* כפתור הוספת שיר */}
       {currentIndex === null && songs.length > 0 && (
         <Box position="relative" mt={3} mb={4} sx={{ display: "flex", justifyContent: "center" }}>
           <Fab
@@ -553,11 +615,11 @@ export default function PlaylistSongs() {
             aria-label="add"
             onClick={openAddSongDialog}
             sx={{
-              background: "linear-gradient(135deg, #1976d2, #64b5f6)",
-              boxShadow: "0 4px 15px rgba(25, 118, 210, 0.3)",
+              background: "linear-gradient(135deg, #667eea, #764ba2)",
+              boxShadow: "0 4px 15px rgba(102, 126, 234, 0.3)",
               "&:hover": {
-                background: "linear-gradient(135deg, #1565c0, #42a5f5)",
-                boxShadow: "0 6px 20px rgba(25, 118, 210, 0.4)",
+                background: "linear-gradient(135deg, #5a6fd8, #6a4190)",
+                boxShadow: "0 6px 20px rgba(102, 126, 234, 0.4)",
               },
             }}
           >
@@ -581,7 +643,7 @@ export default function PlaylistSongs() {
       >
         <DialogTitle
           sx={{
-            bgcolor: "#1976d2",
+            background: "linear-gradient(135deg, #667eea, #764ba2)",
             color: "white",
             py: 2,
           }}
@@ -637,11 +699,11 @@ export default function PlaylistSongs() {
                         <Tooltip title="הוסף לפלייליסט">
                           <IconButton
                             onClick={() => handleAddSong(String(song.id))}
-                            color="primary"
                             sx={{
-                              bgcolor: "rgba(25, 118, 210, 0.05)",
+                              color: "#667eea",
+                              bgcolor: "rgba(102, 126, 234, 0.05)",
                               "&:hover": {
-                                bgcolor: "rgba(25, 118, 210, 0.15)",
+                                bgcolor: "rgba(102, 126, 234, 0.15)",
                               },
                             }}
                           >

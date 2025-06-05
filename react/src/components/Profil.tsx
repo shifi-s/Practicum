@@ -3,11 +3,13 @@ import { useContext, useState } from "react"
 import React from "react"
 import { Logout, Settings } from "@mui/icons-material"
 import { UserContext } from "./userContext"
-import { useNavigate } from "react-router-dom"
+import {  useNavigate } from "react-router-dom"
+import UpdateUserModal from "./Update"
 
-const UserProfil = ({ setUpdate }: { setUpdate: Function }) => {
+const UserProfil = () => {
   const userContext = useContext(UserContext)
   const navigate = useNavigate()
+  const [isEditing, setIsEditing] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
@@ -15,10 +17,7 @@ const UserProfil = ({ setUpdate }: { setUpdate: Function }) => {
   const handleClose = () => {
     setAnchorEl(null)
   }
-  const update = () => {
-    handleClose()
-    setUpdate(true)
-  }
+ 
   const logOut = () => {
     userContext?.setUser(null)
    sessionStorage.removeItem("token")
@@ -27,6 +26,7 @@ const UserProfil = ({ setUpdate }: { setUpdate: Function }) => {
 
   return (
     <>
+   
       <Tooltip 
         title="הגדרות חשבון" 
         arrow
@@ -60,11 +60,11 @@ const UserProfil = ({ setUpdate }: { setUpdate: Function }) => {
             sx={{ 
               bgcolor: 'white',
               color: '#1a237e', 
-              width: 38, 
-              height: 38,
+              width: 45, 
+              height: 45,
               fontWeight: 'bold',
-              fontSize: '1rem',
-              border: '2px solid rgba(255, 255, 255, 0.4)',
+              fontSize: '1.25rem',
+              border: '3px solid rgba(255, 255, 255, 0.4)',
               boxShadow: '0 2px 6px rgba(0, 77, 153, 0.2)'
             }}
           >
@@ -164,7 +164,7 @@ const UserProfil = ({ setUpdate }: { setUpdate: Function }) => {
         />
         
         <MenuItem 
-          onClick={update}
+          onClick={()=>setIsEditing(true)}
           sx={{
             py: 1.5,
             pl: 2,
@@ -214,6 +214,7 @@ const UserProfil = ({ setUpdate }: { setUpdate: Function }) => {
           </Typography>
         </MenuItem>
       </Menu>
+      {isEditing&&<UpdateUserModal onClose={() =>{ setIsEditing(false); setAnchorEl(null);}} />}
     </>
   )
 }

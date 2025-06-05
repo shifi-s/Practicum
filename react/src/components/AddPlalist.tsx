@@ -42,13 +42,13 @@ const CreatePlaylistModal = observer(() => {
     setSuccessOpen(true);
     reset();
     setIsOpen(false);
-    navigate('/mySongs');
+    navigate('/myPlaylists');
 
   };
 
   const handleClose = () => {
     setIsOpen(false);
-    navigate("/mySongs");
+    navigate("/myPlaylists");
   };
 
   return (

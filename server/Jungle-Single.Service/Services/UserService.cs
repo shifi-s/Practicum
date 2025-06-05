@@ -47,5 +47,10 @@ namespace Jungle_Single.Service.Services
                 await _userRepository.DeleteAsync(id);
             
         }
+
+        public async Task<User?> getUserById(int id)
+        {
+            return await _userRepository.GetByIdAsync(id);
+        }
     }
 }

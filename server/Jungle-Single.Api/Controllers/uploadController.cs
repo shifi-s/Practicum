@@ -5,18 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("api/upload")]
-public class UploadController : ControllerBase
+public class UploadController(IAmazonS3 s3Client) : ControllerBase
 {
-    private readonly IAmazonS3 _s3Client;
-
-    public UploadController(IAmazonS3 s3Client)
-    {
-        _s3Client = s3Client;
-    }
+    private readonly IAmazonS3 _s3Client = s3Client;
 
     [HttpGet("presigned-url")]
 
-    public async Task<IActionResult> GetPresignedUrl([FromQuery] string fileName, [FromQuery]string contentType)
+    public IActionResult GetPresignedUrl([FromQuery] string fileName, [FromQuery] string contentType)
     {
         Console.WriteLine(contentType);
         var request = new GetPreSignedUrlRequest

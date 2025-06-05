@@ -24,10 +24,8 @@ import {
   ErrorOutline 
 } from "@mui/icons-material";
 import ShowSongs from "./showSongs";
-import think from "../assets/think.gif";
 
 const Songs = observer(() => {
-  const [isSearch] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const userContext = useContext(UserContext);
   
@@ -69,8 +67,8 @@ const Songs = observer(() => {
           justifyContent="center"
           alignItems="center"
           position="fixed"
-          bottom={24}
-          right={24}
+          top={150}
+          left={30}
           zIndex={1000}
         >
           <Button
@@ -126,7 +124,7 @@ const Songs = observer(() => {
         marginTop: '20px'
       }} />
           {/* Empty State or Results */}
-          {songStore.songs.length === 0 ? (
+          {songStore.filteredSongs.length === 0&&songStore.query!="" ? (
             <Paper 
               elevation={0} 
               sx={{ 
@@ -141,11 +139,10 @@ const Songs = observer(() => {
                 mt: 4
               }}
             >
-              {isSearch.length > 0 ? (
                 <Box>
                   <ErrorOutline sx={{ fontSize: 60, color: '#f44336', mb: 2, opacity: 0.7 }} />
                   <Typography variant="h6" sx={{ color: '#555', fontWeight: 500, mb: 1 }}>
-                    לא נמצאו שירים התואמים את "{isSearch}"
+                  "לא נמצאו שירים תואמים לחיפוש "{songStore.query}
                   </Typography>
                   <Typography variant="body1" sx={{ color: '#777', mb: 2 }}>
                     נסה לחפש מחדש עם מילות מפתח אחרות
@@ -153,39 +150,12 @@ const Songs = observer(() => {
                   <Button 
                     variant="outlined" 
                     color="primary" 
+                    onClick={() => songStore.setQuery("")}
                   >
                     נקה חיפוש
                   </Button>
                 </Box>
-              ) : (
-                <Box>
-                  <img 
-                    src={think} 
-                    alt="No songs found" 
-                    style={{ 
-                      width: '120px', 
-                      marginBottom: '16px',
-                      filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.1))'
-                    }} 
-                  />
-                  <Typography variant="h6" sx={{ color: '#555', fontWeight: 500, mb: 1 }}>
-                    אין שירים להצגה
-                  </Typography>
-                  <Typography variant="body1" sx={{ color: '#777', mb: 2 }}>
-                    התחל להוסיף שירים או חזור מאוחר יותר
-                  </Typography>
-                  {user?.name && (
-                    <Button 
-                      variant="contained" 
-                      color="primary" 
-                      onClick={() => navigate("uploadSong")}
-                      startIcon={<Add />}
-                    >
-                      העלה שיר ראשון
-                    </Button>
-                  )}
-                </Box>
-              )}
+              
             </Paper>
           ) : (
             <Fade in={!isLoading} timeout={800}>

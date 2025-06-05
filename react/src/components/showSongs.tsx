@@ -15,7 +15,8 @@ import {
   Paper, 
   Fade,
   LinearProgress,
-  Slide
+  Slide,
+  Slider
 } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
@@ -24,10 +25,12 @@ import DownloadIcon from "@mui/icons-material/Download";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
 import CloseIcon from "@mui/icons-material/Close";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import ShuffleIcon from "@mui/icons-material/Shuffle";
 import RepeatIcon from "@mui/icons-material/Repeat";
+import RepeatOneIcon from "@mui/icons-material/RepeatOne";
 import QueueMusicIcon from "@mui/icons-material/QueueMusic";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
@@ -37,7 +40,8 @@ import songStore from "../stores/songsStore";
 import { observer } from "mobx-react-lite";
 
 const DEFAULT_COVER = "/default-cover.png";
-const API_URL="https://nonstopmusicserver.onrender.com/"
+const API_URL = "https://nonstopmusicserver.onrender.com/";
+
 // Media Player Component
 const MediaPlayer = ({ 
   song, 
@@ -48,7 +52,16 @@ const MediaPlayer = ({
   onPlayPause,
   onNext,
   onPrevious,
-  onClose
+  onClose,
+  onSeek,
+  volume,
+  onVolumeChange,
+  isMuted,
+  onMuteToggle,
+  isShuffleOn,
+  onShuffleToggle,
+  repeatMode,
+  onRepeatToggle
 }: {
   song: Song | null;
   isPlaying: boolean;
@@ -59,6 +72,15 @@ const MediaPlayer = ({
   onNext: () => void;
   onPrevious: () => void;
   onClose: () => void;
+  onSeek?: (value: number) => void;
+  volume?: number;
+  onVolumeChange?: (value: number) => void;
+  isMuted?: boolean;
+  onMuteToggle?: () => void;
+  isShuffleOn?: boolean;
+  onShuffleToggle?: () => void;
+  repeatMode?: 'off' | 'all' | 'one';
+  onRepeatToggle?: () => void;
 }) => {
   if (!song) return null;
 
@@ -71,38 +93,66 @@ const MediaPlayer = ({
           left: 0,
           right: 0,
           zIndex: 1300,
-          borderRadius: '16px 16px 0 0',
+          borderRadius: 0,
           background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%)',
           backdropFilter: 'blur(20px)',
           boxShadow: '0 -10px 40px rgba(0,0,0,0.15)',
           border: '1px solid rgba(255,255,255,0.2)',
           borderBottom: 'none',
-          overflow: 'visible'
+          overflow: 'visible',
+          minHeight: '70px'
         }}
       >
-        {/* Progress Bar */}
-        <LinearProgress
-          variant="determinate"
-          value={progress}
-          sx={{
-            height: 4,
-            borderRadius: 0,
-            backgroundColor: 'rgba(0,0,0,0.1)',
-            '& .MuiLinearProgress-bar': {
-              background: 'linear-gradient(90deg, #667eea 0%, #764ba2 100%)',
-              borderRadius: 0
-            }
-          }}
-        />
+        {/* Progress Bar with Time Display */}
+        <Box sx={{ px: 3, pt: 2, pb: 1 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1 }}>
+            <Typography variant="caption" sx={{ minWidth: '40px', textAlign: 'center', fontWeight: 600, color: '#666' }}>
+              {currentTime}
+            </Typography>
+            
+            <Box sx={{ flex: 1 }}>
+              <Slider
+                value={progress}
+                onChange={(_, value) => onSeek && onSeek(value as number)}
+                sx={{
+                  height: 6,
+                  color: '#667eea',
+                  '& .MuiSlider-track': {
+                    border: 'none',
+                    background: 'linear-gradient(90deg, #667eea 0%, #764ba2 100%)',
+                    height: 6,
+                  },
+                  '& .MuiSlider-thumb': {
+                    height: 16,
+                    width: 16,
+                    backgroundColor: '#667eea',
+                    boxShadow: '0 2px 6px rgba(102, 126, 234, 0.3)',
+                    '&:hover, &.Mui-focusVisible': {
+                      boxShadow: '0 0 0 8px rgba(102, 126, 234, 0.16)',
+                    },
+                  },
+                  '& .MuiSlider-rail': {
+                    color: 'rgba(0,0,0,0.1)',
+                    height: 6,
+                  },
+                }}
+              />
+            </Box>
+            
+            <Typography variant="caption" sx={{ minWidth: '40px', textAlign: 'center', fontWeight: 600, color: '#666' }}>
+              {totalTime}
+            </Typography>
+          </Box>
+        </Box>
 
         <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
             
-            {/* Left Side - Song Info & Now Playing */}
+            {/* Left Side - Song Info */}
             <Box sx={{ 
               display: 'flex', 
               alignItems: 'center', 
-              gap: 2, 
+              gap: 1.5, 
               minWidth: 0, 
               flex: 1 
             }}>
@@ -121,7 +171,8 @@ const MediaPlayer = ({
                   '@keyframes subtle-pulse': {
                     '0%, 100%': { transform: 'scale(1)' },
                     '50%': { transform: 'scale(1.02)' }
-                  }
+                  },
+                  marginRight: 0.5
                 }}
               />
 
@@ -131,7 +182,7 @@ const MediaPlayer = ({
                   variant="h6" 
                   fontWeight={700}
                   sx={{ 
-                    fontSize: '1rem',
+                    fontSize: '1.1rem',
                     color: '#333',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
@@ -148,31 +199,11 @@ const MediaPlayer = ({
                   sx={{
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                    mb: 0.5
+                    whiteSpace: 'nowrap'
                   }}
                 >
                   {song.artist}
                 </Typography>
-
-                {/* Live Indicator & Time */}
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                 
-
-                  <Typography variant="caption" color="text.secondary" fontWeight={600}>
-                    {currentTime}
-                  </Typography>
-                  <Box sx={{ 
-                    width: 2, 
-                    height: 2, 
-                    borderRadius: '50%', 
-                    bgcolor: 'text.secondary',
-                    opacity: 0.5
-                  }} />
-                  <Typography variant="caption" color="text.secondary">
-                    {totalTime}
-                  </Typography>
-                </Box>
               </Box>
             </Box>
 
@@ -190,8 +221,10 @@ const MediaPlayer = ({
                   color: '#666',
                   '&:hover': { 
                     color: '#333',
-                    backgroundColor: 'rgba(102, 126, 234, 0.1)' 
-                  }
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                    transform: 'scale(1.1)'
+                  },
+                  transition: 'all 0.2s ease'
                 }}
               >
                 <SkipPreviousIcon />
@@ -221,8 +254,10 @@ const MediaPlayer = ({
                   color: '#666',
                   '&:hover': { 
                     color: '#333',
-                    backgroundColor: 'rgba(102, 126, 234, 0.1)' 
-                  }
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                    transform: 'scale(1.1)'
+                  },
+                  transition: 'all 0.2s ease'
                 }}
               >
                 <SkipNextIcon />
@@ -242,17 +277,75 @@ const MediaPlayer = ({
                 alignItems: 'center', 
                 gap: 0.5 
               }}>
-                <IconButton size="small" sx={{ color: '#666' }}>
+                {/* Shuffle */}
+                <IconButton 
+                  size="small" 
+                  onClick={onShuffleToggle}
+                  sx={{ 
+                    color: isShuffleOn ? '#667eea' : '#666',
+                    '&:hover': { 
+                      backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                      transform: 'scale(1.1)'
+                    },
+                    transition: 'all 0.2s ease'
+                  }}
+                >
                   <ShuffleIcon fontSize="small" />
                 </IconButton>
-                <IconButton size="small" sx={{ color: '#666' }}>
-                  <RepeatIcon fontSize="small" />
+
+                {/* Repeat */}
+                <IconButton 
+                  size="small"
+                  onClick={onRepeatToggle}
+                  sx={{ 
+                    color: repeatMode !== 'off' ? '#667eea' : '#666',
+                    '&:hover': { 
+                      backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                      transform: 'scale(1.1)'
+                    },
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  {repeatMode === 'one' ? <RepeatOneIcon fontSize="small" /> : <RepeatIcon fontSize="small" />}
                 </IconButton>
+
+                {/* Volume Control */}
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, minWidth: 100 }}>
+                  <IconButton 
+                    size="small" 
+                    onClick={onMuteToggle}
+                    sx={{ 
+                      color: isMuted ? '#f44336' : '#666',
+                      '&:hover': { 
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        transform: 'scale(1.1)'
+                      },
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    {isMuted ? <VolumeOffIcon fontSize="small" /> : <VolumeUpIcon fontSize="small" />}
+                  </IconButton>
+                  
+                  <Slider
+                    value={isMuted ? 0 : volume || 100}
+                    onChange={(_, value) => onVolumeChange && onVolumeChange(value as number)}
+                    sx={{
+                      width: 80,
+                      height: 4,
+                      color: '#667eea',
+                      '& .MuiSlider-thumb': {
+                        width: 12,
+                        height: 12,
+                        '&:hover, &.Mui-focusVisible': {
+                          boxShadow: '0 0 0 8px rgba(102, 126, 234, 0.16)',
+                        },
+                      },
+                    }}
+                  />
+                </Box>
+
                 <IconButton size="small" sx={{ color: '#666' }}>
                   <QueueMusicIcon fontSize="small" />
-                </IconButton>
-                <IconButton size="small" sx={{ color: '#666' }}>
-                  <VolumeUpIcon fontSize="small" />
                 </IconButton>
                 <IconButton size="small" sx={{ color: '#666' }}>
                   <FavoriteIcon fontSize="small" />
@@ -271,8 +364,10 @@ const MediaPlayer = ({
                   ml: 1,
                   '&:hover': { 
                     color: '#f44336',
-                    backgroundColor: 'rgba(244, 67, 54, 0.1)' 
-                  }
+                    backgroundColor: 'rgba(244, 67, 54, 0.1)',
+                    transform: 'scale(1.1)'
+                  },
+                  transition: 'all 0.2s ease'
                 }}
               >
                 <CloseIcon fontSize="small" />
@@ -300,8 +395,14 @@ const ShowSongs = observer(() => {
   const [lyricsModalOpen, setLyricsModalOpen] = useState(false);
   const [currentLyricsSong, setCurrentLyricsSong] = useState<Song | null>(null);
   const [audioProgress, setAudioProgress] = useState<{ [key: number]: number }>({});
+  
+  // Enhanced controls state
+  const [volume, setVolume] = useState(100);
+  const [isMuted, setIsMuted] = useState(false);
+  const [isShuffleOn, setIsShuffleOn] = useState(false);
+  const [repeatMode, setRepeatMode] = useState<'off' | 'all' | 'one'>('off');
 
-  // Media Player Helper Functions
+  // Helper Functions
   const formatTime = (seconds: number) => {
     if (!seconds || isNaN(seconds)) return '0:00';
     const mins = Math.floor(seconds / 60);
@@ -336,16 +437,92 @@ const ShowSongs = observer(() => {
 
   const handleNext = () => {
     if (!playingId) return;
+    
+    let nextIndex: number;
     const currentIndex = songs.findIndex(song => song.id === playingId);
-    const nextIndex = (currentIndex + 1) % songs.length;
+    
+    if (repeatMode === 'one') {
+      const audio = audioRefs.current[playingId];
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play();
+      }
+      return;
+    }
+    
+    if (isShuffleOn) {
+      const availableIndices = songs.map((_, i) => i).filter(i => i !== currentIndex);
+      nextIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
+    } else {
+      nextIndex = (currentIndex + 1) % songs.length;
+    }
+    
     handleStartPlaying(songs[nextIndex].id);
   };
 
   const handlePrevious = () => {
     if (!playingId) return;
+    
+    const audio = audioRefs.current[playingId];
+    
+    if (audio && audio.currentTime > 3) {
+      audio.currentTime = 0;
+      return;
+    }
+    
     const currentIndex = songs.findIndex(song => song.id === playingId);
-    const prevIndex = currentIndex === 0 ? songs.length - 1 : currentIndex - 1;
+    let prevIndex: number;
+    
+    if (isShuffleOn) {
+      const availableIndices = songs.map((_, i) => i).filter(i => i !== currentIndex);
+      prevIndex = availableIndices[Math.floor(Math.random() * availableIndices.length)];
+    } else {
+      prevIndex = currentIndex === 0 ? songs.length - 1 : currentIndex - 1;
+    }
+    
     handleStartPlaying(songs[prevIndex].id);
+  };
+
+  const handleSeek = (value: number) => {
+    if (playingId && audioRefs.current[playingId]) {
+      const audio = audioRefs.current[playingId];
+      const newTime = (value / 100) * audio.duration;
+      audio.currentTime = newTime;
+      setAudioProgress(prev => ({ ...prev, [playingId]: value }));
+    }
+  };
+
+  const handleVolumeChange = (value: number) => {
+    setVolume(value);
+    setIsMuted(value === 0);
+    
+    if (playingId && audioRefs.current[playingId]) {
+      audioRefs.current[playingId].volume = value / 100;
+    }
+    
+    Object.values(audioRefs.current).forEach(audio => {
+      if (audio) audio.volume = value / 100;
+    });
+  };
+
+  const handleMuteToggle = () => {
+    const newMutedState = !isMuted;
+    setIsMuted(newMutedState);
+    
+    Object.values(audioRefs.current).forEach(audio => {
+      if (audio) audio.volume = newMutedState ? 0 : volume / 100;
+    });
+  };
+
+  const handleShuffleToggle = () => {
+    setIsShuffleOn(!isShuffleOn);
+  };
+
+  const handleRepeatToggle = () => {
+    const modes: ('off' | 'all' | 'one')[] = ['off', 'all', 'one'];
+    const currentIndex = modes.indexOf(repeatMode);
+    const nextIndex = (currentIndex + 1) % modes.length;
+    setRepeatMode(modes[nextIndex]);
   };
 
   const handleCloseMediaPlayer = () => {
@@ -358,12 +535,10 @@ const ShowSongs = observer(() => {
     setAudioProgress(prev => ({ ...prev, [playingId!]: 0 }));
   };
 
-  // פונקציה להתחלת נגינה (רק כשהשיר לא נגן)
   const handleStartPlaying = async (id: number) => {
     const audio = audioRefs.current[id];
     if (!audio || playingId === id) return;
 
-    // עצור את כל השירים האחרים
     Object.entries(audioRefs.current).forEach(([key, audioElement]) => {
       if (audioElement && parseInt(key) !== id) {
         audioElement.pause();
@@ -371,7 +546,8 @@ const ShowSongs = observer(() => {
       }
     });
     
-    // התחל את השיר החדש
+    audio.volume = isMuted ? 0 : volume / 100;
+    
     setPlayingId(id);
     setIsPlaying(true);
     audio.currentTime = 0;
@@ -383,7 +559,7 @@ const ShowSongs = observer(() => {
     }
   };
 
-  // מאזיני אירועים לאודיו - רק לעדכון UI
+  // Progress update effect
   useEffect(() => {
     const updateProgress = () => {
       if (playingId && audioRefs.current[playingId]) {
@@ -402,7 +578,30 @@ const ShowSongs = observer(() => {
     return () => clearInterval(interval);
   }, [playingId]);
 
-  // גלילה לשיר הנגן
+  // Auto-play next song effect
+  useEffect(() => {
+    if (playingId && audioRefs.current[playingId]) {
+      const audio = audioRefs.current[playingId];
+      
+      const handleEnded = () => {
+        if (repeatMode === 'one') {
+          audio.currentTime = 0;
+          audio.play();
+        } else if (repeatMode === 'all' || isShuffleOn) {
+          handleNext();
+        } else {
+          setPlayingId(null);
+          setIsPlaying(false);
+          setAudioProgress(prev => ({ ...prev, [playingId]: 0 }));
+        }
+      };
+      
+      audio.addEventListener('ended', handleEnded);
+      return () => audio.removeEventListener('ended', handleEnded);
+    }
+  }, [playingId, repeatMode, isShuffleOn]);
+
+  // Scroll to playing song effect
   useEffect(() => {
     if (playingId && cardsContainerRef.current) {
       const playingCard = document.getElementById(`song-card-${playingId}`);
@@ -481,9 +680,6 @@ const ShowSongs = observer(() => {
     setCurrentLyricsSong(null);
   };
 
-  // סידור השירים עם השיר הנגן למעלה
-  
-
   return (
     <>
       <Box
@@ -501,10 +697,10 @@ const ShowSongs = observer(() => {
           mx: { xs: 1, sm: 1.5, md: 2, lg: 2 },
           my: 2,
           minHeight: '60vh',
-          paddingBottom: playingId ? '140px' : '20px', // Space for media player
+          paddingBottom: playingId ? '140px' : '20px',
         }}
       >
-        {/* מודל מילות השיר */}
+        {/* Lyrics Modal */}
         <Modal
           open={lyricsModalOpen}
           onClose={closeLyricsModal}
@@ -661,8 +857,7 @@ const ShowSongs = observer(() => {
                 overflow: "hidden",
                 borderRadius: 3,
                 transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                boxShadow:
-                 "0 4px 20px rgba(0, 0, 0, 0.08)",
+                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
                 backgroundColor: '#fff',
                 transform: isCurrentlyPlaying 
                   ? 'scale(1.02)' 
@@ -676,7 +871,7 @@ const ShowSongs = observer(() => {
                 opacity: playingId && !isCurrentlyPlaying ? 0.7 : 1,
               }}
             >
-              {/* תגית ז'אנר */}
+              {/* Genre chip */}
               {song.genre && (
                 <Chip 
                   icon={<MusicNoteIcon fontSize="small" />} 
@@ -695,15 +890,12 @@ const ShowSongs = observer(() => {
                 />
               )}
 
-           
-
-              {/* תמונת כריכה */}
+              {/* Cover Image */}
               <Box 
                 sx={{ 
                   position: 'relative', 
                   width: '100%', 
-                  height: 
-                  160, 
+                  height: 160, 
                   overflow: 'hidden' 
                 }}
               >
@@ -722,7 +914,7 @@ const ShowSongs = observer(() => {
                   alt={`תמונת כריכה של השיר ${song.title}`}
                 />
                 
-                {/* כפתור הפעלה או אינדיקטור ויזואלי */}
+                {/* Play button overlay */}
                 <Box
                   onClick={isCurrentlyPlaying ? undefined : () => handleStartPlaying(song.id)}
                   sx={{
@@ -771,7 +963,7 @@ const ShowSongs = observer(() => {
                   >
                     {isCurrentlyPlaying ? (
                       isCurrentlyPlayingAndActive ? 
-                        <PlayArrowIcon  sx={{ color: '#fff', fontSize: 32 }} /> : 
+                        <PlayArrowIcon sx={{ color: '#fff', fontSize: 32 }} /> : 
                         <PauseIcon sx={{ color: '#fff', fontSize: 32 }} />
                     ) : (
                       <PlayArrowIcon sx={{ color: '#1976d2', fontSize: 32 }} />
@@ -779,7 +971,7 @@ const ShowSongs = observer(() => {
                   </IconButton>
                 </Box>
 
-                {/* בר התקדמות */}
+                {/* Progress bar */}
                 {isCurrentlyPlaying && (
                   <LinearProgress
                     variant="determinate"
@@ -808,7 +1000,7 @@ const ShowSongs = observer(() => {
                   "&:last-child": { pb: 2 } 
                 }}
               >
-                {/* כותרת ואמן */}
+                {/* Title and Artist */}
                 <Typography 
                   variant="h6" 
                   fontWeight={700} 
@@ -846,24 +1038,19 @@ const ShowSongs = observer(() => {
                   {song.artist}
                 </Typography>
 
-                {/* נגן אודיו - תמיד קיים אבל נסתר */}
+                {/* Hidden audio element */}
                 <Box sx={{ display: 'none' }}>
                   <audio 
                     ref={(el) => { if (el) audioRefs.current[song.id] = el; }} 
                     onPlay={() => setIsPlaying(true)}
                     onPause={() => setIsPlaying(false)}
-                    onEnded={() => {
-                      setPlayingId(null);
-                      setIsPlaying(false);
-                      setAudioProgress(prev => ({ ...prev, [song.id]: 0 }));
-                    }}
                   >
                     <source src={song.audioUrl} type="audio/mp3" />
                     הדפדפן שלך לא תומך בתגית האודיו.
                   </audio>
                 </Box>
 
-                {/* כפתורי פעולה */}
+                {/* Action buttons */}
                 <Box sx={{ mt: 'auto', display: 'flex', flexDirection: 'column', gap: 1.5 }}>
                   <Button 
                     onClick={() => fetchLyrics(song)} 
@@ -933,7 +1120,7 @@ const ShowSongs = observer(() => {
         })}
       </Box>
 
-      {/* Media Player */}
+      {/* Enhanced Media Player */}
       <MediaPlayer
         song={songs.find(s => s.id === playingId) || null}
         isPlaying={isPlaying}
@@ -944,6 +1131,15 @@ const ShowSongs = observer(() => {
         onNext={handleNext}
         onPrevious={handlePrevious}
         onClose={handleCloseMediaPlayer}
+        onSeek={handleSeek}
+        volume={volume}
+        onVolumeChange={handleVolumeChange}
+        isMuted={isMuted}
+        onMuteToggle={handleMuteToggle}
+        isShuffleOn={isShuffleOn}
+        onShuffleToggle={handleShuffleToggle}
+        repeatMode={repeatMode}
+        onRepeatToggle={handleRepeatToggle}
       />
     </>
   );

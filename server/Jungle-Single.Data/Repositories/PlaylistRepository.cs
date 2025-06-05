@@ -103,7 +103,11 @@ namespace Jungle_Single.Data.Repositories
 
         public async Task<IEnumerable<Playlist>> GetAllAsync(int userId)
         {
-            return await _context.Playlists.ToListAsync();
+            var playlists = await _context.Playlists
+                .Where(p => p.UserId == userId)
+                .ToListAsync();
+
+            return playlists;
         }
     }
 }
