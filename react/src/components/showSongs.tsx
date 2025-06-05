@@ -40,7 +40,7 @@ import songStore from "../stores/songsStore";
 import { observer } from "mobx-react-lite";
 
 const DEFAULT_COVER = "/default-cover.png";
-const API_URL = "https://nonstopmusicserver.onrender.com/";
+const API_URL = import.meta.env.VITE_API_URL ;
 
 // Media Player Component
 const MediaPlayer = ({ 
