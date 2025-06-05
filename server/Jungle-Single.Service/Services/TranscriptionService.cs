@@ -1,19 +1,28 @@
-﻿using System.Net.Http.Headers;
-using System.Text;
-using Jungle_Single.Data;
+﻿using Jungle_Single.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using System.Net.Http.Headers;
+using System.Text;
 
-public class TranscriptionService(HttpClient httpClient, IConfiguration config, AppDbContext context)
+public class TranscriptionService
 {
-    private readonly HttpClient _httpClient = httpClient;
-    private readonly IConfiguration _config = config;
-    private readonly AppDbContext _context = context;
+    private readonly HttpClient _httpClient;
+    private readonly IConfiguration _config;
+    private readonly AppDbContext _context;
+
+    public TranscriptionService(HttpClient httpClient, IConfiguration config, AppDbContext context)
+    {
+        _httpClient = httpClient;
+        _config = config;
+        _context = context;
+    }
 
     public async Task<string> GetOrTranscribeAndStructureLyricsAsync(string audioUrl)
     {
-        var song = await _context.Songs.FirstOrDefaultAsync(s => s.AudioUrl == audioUrl) ?? throw new Exception("השיר לא נמצא במסד הנתונים");
+        var song = await _context.Songs.FirstOrDefaultAsync(s => s.AudioUrl == audioUrl)
+                   ?? throw new Exception("השיר לא נמצא במסד הנתונים");
+
         if (!string.IsNullOrWhiteSpace(song.Lyrics))
             return song.Lyrics;
 
@@ -32,9 +41,7 @@ public class TranscriptionService(HttpClient httpClient, IConfiguration config, 
 הטקסט הבא הוא תמלול של שיר. סדר אותו לפי קטעים ברורים של השיר – בתים ופזמונים.
 אל תוסיף הסברים.
 
-""
-{ rawText}
-        
+""{rawText}""
 ";
 
         var requestBody = new
@@ -47,13 +54,11 @@ public class TranscriptionService(HttpClient httpClient, IConfiguration config, 
             }
         };
 
-        var content = new StringContent(JsonConvert.SerializeObject(requestBody), Encoding.UTF8, "application/json");
         var apiKey = _config["OpenAI:ApiKey"];
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
 
-        using var client = new HttpClient();
-        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
-
-        var response = await client.PostAsync("https://api.openai.com/v1/chat/completions", content);
+        var content = new StringContent(JsonConvert.SerializeObject(requestBody), Encoding.UTF8, "application/json");
+        var response = await _httpClient.PostAsync("https://api.openai.com/v1/chat/completions", content);
         var json = await response.Content.ReadAsStringAsync();
 
         if (!response.IsSuccessStatusCode)
@@ -67,26 +72,26 @@ public class TranscriptionService(HttpClient httpClient, IConfiguration config, 
     {
         if (!Uri.TryCreate(audioUrl, UriKind.Absolute, out var uri) ||
             (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps))
-        {
             throw new ArgumentException("Invalid audio URL");
-        }
 
         var audioStream = await _httpClient.GetStreamAsync(uri);
         using var memoryStream = new MemoryStream();
         await audioStream.CopyToAsync(memoryStream);
         memoryStream.Position = 0;
 
-        using var requestContent = new MultipartFormDataContent();
         var fileContent = new StreamContent(memoryStream);
         fileContent.Headers.ContentType = new MediaTypeHeaderValue("audio/mpeg");
-        requestContent.Add(fileContent, "file", "audio.mp3");
-        requestContent.Add(new StringContent("whisper-1"), "model");
 
-        using var whisperClient = new HttpClient();
-        whisperClient.DefaultRequestHeaders.Authorization =
-            new AuthenticationHeaderValue("Bearer", _config["OpenAI:ApiKey"]);
+        var requestContent = new MultipartFormDataContent
+        {
+            { fileContent, "file", "audio.mp3" },
+            { new StringContent("whisper-1"), "model" }
+        };
 
-        var response = await whisperClient.PostAsync("https://api.openai.com/v1/audio/transcriptions", requestContent);
+        var apiKey = _config["OpenAI:ApiKey"];
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+
+        var response = await _httpClient.PostAsync("https://api.openai.com/v1/audio/transcriptions", requestContent);
         var responseString = await response.Content.ReadAsStringAsync();
 
         if (!response.IsSuccessStatusCode)

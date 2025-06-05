@@ -1,7 +1,6 @@
 ﻿using Jungle_Single.Service.Services;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using System.Threading.Tasks;
 
 namespace Jungle_Single.Api.Controllers
 {
@@ -13,41 +12,48 @@ namespace Jungle_Single.Api.Controllers
         private readonly SongRecommendationService _recommendationService;
         private readonly TranscriptionService _transcriptionService;
 
-        public AiController(TranscriptionService transcriptionService,MoodAnalyzerService moodAnalyzer,SongRecommendationService recommendationService)
+        public AiController(
+            TranscriptionService transcriptionService,
+            MoodAnalyzerService moodAnalyzer,
+            SongRecommendationService recommendationService)
         {
+            _transcriptionService = transcriptionService;
             _moodAnalyzer = moodAnalyzer;
             _recommendationService = recommendationService;
-            _transcriptionService= transcriptionService;
-
         }
-        // GET: api/<AiController>
+
+        // POST: api/Ai/transcribe
         [HttpPost("transcribe")]
-        public async Task<IActionResult> TranscribeFromS3([FromBody] string audioUrl)
+        public async Task<IActionResult> Transcribe([FromBody] TranscriptionRequest request)
         {
-            var text = await _transcriptionService.GetOrTranscribeAndStructureLyricsAsync(audioUrl);
+            if (string.IsNullOrWhiteSpace(request.AudioUrl))
+                return BadRequest("audioUrl is required");
+
+            var text = await _transcriptionService.GetOrTranscribeAndStructureLyricsAsync(request.AudioUrl);
             return Ok(text);
         }
 
-
-
+        // POST: api/Ai/ai-recommend
         [HttpPost("ai-recommend")]
-        public async Task<IActionResult> RecommendByText([FromBody] string text)
+        public async Task<IActionResult> Recommend([FromBody] RecommendRequest request)
         {
-            var mood = await _moodAnalyzer.GetMoodFromTextAsync(text); // שלב ה-AI
-            var songs = await _recommendationService.GetSongsByMoodAsync(mood); // חיפוש שירים
+            if (string.IsNullOrWhiteSpace(request.Text))
+                return BadRequest("text is required");
+
+            var mood = await _moodAnalyzer.GetMoodFromTextAsync(request.Text);
+            var songs = await _recommendationService.GetSongsByMoodAsync(mood);
             return Ok(new { mood, songs });
         }
+    }
 
-        // PUT api/<AiController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+    // בקשות קלט
+    public class TranscriptionRequest
+    {
+        public string AudioUrl { get; set; }
+    }
 
-        // DELETE api/<AiController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+    public class RecommendRequest
+    {
+        public string Text { get; set; }
     }
 }

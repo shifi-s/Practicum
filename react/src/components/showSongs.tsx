@@ -629,7 +629,7 @@ const ShowSongs = observer(() => {
       const res = await fetch(`${API_URL}/api/Ai/transcribe`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(song.audioUrl)
+         body: JSON.stringify({ audioUrl: song.audioUrl })
       });
       const text = await res.text();
       
