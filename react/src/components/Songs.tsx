@@ -68,7 +68,7 @@ const Songs = observer(() => {
           alignItems="center"
           position="fixed"
           top={150}
-          left={30}
+          right={30}
           zIndex={1000}
         >
           <Button

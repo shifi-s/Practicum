@@ -13,6 +13,7 @@ interface UpdateUserDto {
 }
 
 export default function UpdateUserModal({ onClose }: { onClose: Function }) {
+  const apiUrl = process.env.REACT_APP_API_URL 
   const { user, setUser } = useContext(UserContext)!;
   const [open] = useState(true);
   const [success, setSuccess] = useState(false);
@@ -31,7 +32,7 @@ export default function UpdateUserModal({ onClose }: { onClose: Function }) {
   });
 
   const updateUser = async (userToUpdate: UpdateUserDto, token: string) => {
-    const response = await axios.put(`https://localhost:7265/api/users/${user?.id}`, userToUpdate, {
+    const response = await axios.put(`${apiUrl}/api/users/${user?.id}`, userToUpdate, {
       headers: {
         Authorization: `Bearer ${token}`
       }
