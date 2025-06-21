@@ -13,7 +13,7 @@ import {
 } from "@mui/material"
 
 import { useModal } from "./modalContext"
-import { MusicNote, Whatshot, LibraryMusic, Home } from "@mui/icons-material"
+import { MusicNote, Whatshot, LibraryMusic } from "@mui/icons-material"
 import SearchSong from "./searchSong"
 
 const Header = () => {
