@@ -5,13 +5,10 @@ const Home: React.FC = () => {
     const navigate = useNavigate();
 
     const handleGetStarted = () => {
-        // אם יש טוקן, לך לרשימת השירים
         if (sessionStorage.getItem("token")) {
             navigate('/songs');
         } else {
-            // אם אין טוקן, הראה modal התחברות (או לך לדף התחברות)
-            // כאן תצטרכי להוסיף את הלוגיקה לפתיחת modal או ניווט לדף התחברות
-            navigate('/songs'); // או לפתוח modal
+            navigate('/songs');
         }
     };
 
@@ -19,7 +16,6 @@ const Home: React.FC = () => {
         if (sessionStorage.getItem("token")) {
             navigate('/myPlaylists');
         } else {
-            // פתח modal התחברות
             navigate('/songs');
         }
     };
@@ -31,32 +27,24 @@ const Home: React.FC = () => {
     return (
         <div 
             style={{
-                // Full viewport coverage
                 width: '100vw',
                 height: '100vh',
                 minHeight: '100vh',
-                
-                // Remove any default margins/padding
                 margin: 0,
                 padding: 0,
-                
-                // Position fixed to cover entire screen
                 position: 'fixed',
                 top: 0,
                 left: 0,
                 right: 0,
                 bottom: 0,
                 
-                // Dynamic gradient background - matching header colors
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #5a67d8 100%)',
-                backgroundSize: '400% 400%',
+                // גרדיאנט משופר עם 4 צבעים
+                background: 'linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #5a67d8)',
+                backgroundSize: '600% 600%',
+                animation: 'gradientShift 18s ease infinite',
                 
-                // Gradient animation
-                animation: 'gradientShift 15s ease infinite',
-                
-                // Fix overflow issue
-                overflow: 'hidden',
-                zIndex: -1
+                overflow: 'auto',
+                zIndex: 1
             }}
         >
             {/* Glassmorphism overlay effect */}
@@ -70,34 +58,56 @@ const Home: React.FC = () => {
                     background: 'rgba(255, 255, 255, 0.08)',
                     backdropFilter: 'blur(20px)',
                     pointerEvents: 'none',
+                    zIndex: 2
                 }}
             />
             
-            {/* Floating Music Notes */}
-            {[...Array(10)].map((_, i) => (
+            {/* Floating Music Notes - יותר תווים */}
+            {[...Array(15)].map((_, i) => (
                 <div
                     key={i}
                     style={{
                         position: 'absolute',
-                        fontSize: `${Math.random() * 20 + 15}px`,
-                        color: 'rgba(255, 255, 255, 0.2)',
-                        left: `${10 + Math.random() * 80}%`, // הגבלת המיקום
+                        fontSize: `${Math.random() * 25 + 18}px`,
+                        color: `rgba(255, 255, 255, ${0.15 + Math.random() * 0.3})`,
+                        left: `${10 + Math.random() * 80}%`,
                         top: `${10 + Math.random() * 80}%`,
-                        animationDelay: `${Math.random() * 8}s`,
-                        animation: `floatNote${i % 4} ${6 + Math.random() * 3}s ease-in-out infinite`,
+                        animationDelay: `${Math.random() * 10}s`,
+                        animation: `floatNote${i % 5} ${6 + Math.random() * 4}s ease-in-out infinite`,
                         pointerEvents: 'none',
-                        zIndex: 1
+                        zIndex: 3,
+                        textShadow: '0 0 15px rgba(255,255,255,0.4)'
                     }}
                 >
-                    {['♪', '♫', '♬', '🎵', '🎶'][Math.floor(Math.random() * 5)]}
+                    {['♪', '♫', '♬', '🎵', '🎶', '♭', '♯'][Math.floor(Math.random() * 7)]}
+                </div>
+            ))}
+
+            {/* כוכבים קטנים */}
+            {[...Array(8)].map((_, i) => (
+                <div
+                    key={`star-${i}`}
+                    style={{
+                        position: 'absolute',
+                        fontSize: `${Math.random() * 15 + 8}px`,
+                        color: 'rgba(255, 255, 255, 0.6)',
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`,
+                        animation: `twinkle ${2 + Math.random() * 3}s ease-in-out infinite`,
+                        animationDelay: `${Math.random() * 5}s`,
+                        pointerEvents: 'none',
+                        zIndex: 4
+                    }}
+                >
+                    ✨
                 </div>
             ))}
             
-            {/* Content container with proper header spacing */}
+            {/* Content container */}
             <div 
                 style={{
                     position: 'relative',
-                    zIndex: 2,
+                    zIndex: 10,
                     width: '100%',
                     height: '100vh',
                     display: 'flex',
@@ -105,7 +115,7 @@ const Home: React.FC = () => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     padding: '1rem',
-                    paddingTop: '120px', // Space for header
+                    paddingTop: '120px',
                     paddingBottom: '2rem',
                     boxSizing: 'border-box',
                     textAlign: 'center',
@@ -123,7 +133,7 @@ const Home: React.FC = () => {
                         backdropFilter: 'blur(30px)',
                         border: '1px solid rgba(255, 255, 255, 0.2)',
                         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
-                        animation: 'fadeInUp 1s ease-out',
+                        animation: 'fadeInUp 1s ease-out, titleFloat 5s ease-in-out infinite 1s',
                         maxWidth: '100%'
                     }}
                 >
@@ -158,7 +168,7 @@ const Home: React.FC = () => {
                     </p>
                 </div>
 
-                {/* Navigation Cards - עכשיו הם קישורים אמיתיים */}
+                {/* Navigation Cards */}
                 <div
                     style={{
                         display: 'grid',
@@ -179,14 +189,15 @@ const Home: React.FC = () => {
                             backdropFilter: 'blur(20px)',
                             border: '1px solid rgba(255, 255, 255, 0.1)',
                             textAlign: 'center',
-                            animation: 'fadeInUp 1.2s ease-out',
+                            animation: 'fadeInUp 1.2s ease-out, cardFloat 4s ease-in-out infinite 1.5s',
                             transition: 'all 0.3s ease',
                             cursor: 'pointer',
-                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
+                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+                            userSelect: 'none'
                         }}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
-                            e.currentTarget.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.2)';
+                            e.currentTarget.style.transform = 'translateY(-10px) scale(1.03)';
+                            e.currentTarget.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.2)';
                             e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)';
                         }}
                         onMouseLeave={(e) => {
@@ -195,7 +206,13 @@ const Home: React.FC = () => {
                             e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
                         }}
                     >
-                        <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎵</div>
+                        <div style={{ 
+                            fontSize: '3rem', 
+                            marginBottom: '1rem',
+                            animation: 'iconPulse 3s ease-in-out infinite'
+                        }}>
+                            🎵
+                        </div>
                         <h3 style={{ 
                             color: 'white', 
                             fontSize: '1.4rem', 
@@ -225,15 +242,16 @@ const Home: React.FC = () => {
                             backdropFilter: 'blur(20px)',
                             border: '1px solid rgba(255, 255, 255, 0.1)',
                             textAlign: 'center',
-                            animation: 'fadeInUp 1.4s ease-out',
+                            animation: 'fadeInUp 1.4s ease-out, cardFloat 4s ease-in-out infinite 2s',
                             transition: 'all 0.3s ease',
                             cursor: 'pointer',
                             boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
-                            position: 'relative'
+                            position: 'relative',
+                            userSelect: 'none'
                         }}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
-                            e.currentTarget.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.2)';
+                            e.currentTarget.style.transform = 'translateY(-10px) scale(1.03)';
+                            e.currentTarget.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.2)';
                             e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)';
                         }}
                         onMouseLeave={(e) => {
@@ -248,18 +266,26 @@ const Home: React.FC = () => {
                                 position: 'absolute',
                                 top: '15px',
                                 right: '15px',
-                                background: '#ff4757',
+                                background: 'linear-gradient(45deg, #ff4757, #ff6b7a)',
                                 color: 'white',
                                 padding: '4px 8px',
                                 borderRadius: '12px',
                                 fontSize: '0.8rem',
                                 fontWeight: 700,
-                                animation: 'pulse 2s infinite'
+                                animation: 'pulse 2s infinite',
+                                pointerEvents: 'none',
+                                boxShadow: '0 2px 8px rgba(255, 71, 87, 0.3)'
                             }}
                         >
                             חדש!
                         </div>
-                        <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔥</div>
+                        <div style={{ 
+                            fontSize: '3rem', 
+                            marginBottom: '1rem',
+                            animation: 'iconBounce 3s ease-in-out infinite'
+                        }}>
+                            🔥
+                        </div>
                         <h3 style={{ 
                             color: 'white', 
                             fontSize: '1.4rem', 
@@ -289,14 +315,15 @@ const Home: React.FC = () => {
                             backdropFilter: 'blur(20px)',
                             border: '1px solid rgba(255, 255, 255, 0.1)',
                             textAlign: 'center',
-                            animation: 'fadeInUp 1.6s ease-out',
+                            animation: 'fadeInUp 1.6s ease-out, cardFloat 4s ease-in-out infinite 2.5s',
                             transition: 'all 0.3s ease',
                             cursor: 'pointer',
-                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
+                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+                            userSelect: 'none'
                         }}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
-                            e.currentTarget.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.2)';
+                            e.currentTarget.style.transform = 'translateY(-10px) scale(1.03)';
+                            e.currentTarget.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.2)';
                             e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)';
                         }}
                         onMouseLeave={(e) => {
@@ -305,7 +332,13 @@ const Home: React.FC = () => {
                             e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
                         }}
                     >
-                        <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎯</div>
+                        <div style={{ 
+                            fontSize: '3rem', 
+                            marginBottom: '1rem',
+                            animation: 'iconWave 4s ease-in-out infinite'
+                        }}>
+                            🎯
+                        </div>
                         <h3 style={{ 
                             color: 'white', 
                             fontSize: '1.4rem', 
@@ -326,7 +359,7 @@ const Home: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Call to Action - מוביל לכל השירים */}
+                {/* Call to Action */}
                 <div
                     style={{
                         animation: 'fadeInUp 1.8s ease-out'
@@ -346,11 +379,13 @@ const Home: React.FC = () => {
                             boxShadow: '0 8px 25px rgba(255, 255, 255, 0.2)',
                             transition: 'all 0.3s ease',
                             direction: 'rtl',
-                            fontFamily: "'Inter', 'Rubik', sans-serif"
+                            fontFamily: "'Inter', 'Rubik', sans-serif",
+                            userSelect: 'none',
+                            animation: 'buttonGlow 3s ease-in-out infinite 2s'
                         }}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
-                            e.currentTarget.style.boxShadow = '0 12px 35px rgba(255, 255, 255, 0.3)';
+                            e.currentTarget.style.transform = 'translateY(-5px) scale(1.05)';
+                            e.currentTarget.style.boxShadow = '0 15px 40px rgba(255, 255, 255, 0.3)';
                             e.currentTarget.style.background = '#f8fafc';
                         }}
                         onMouseLeave={(e) => {
@@ -364,32 +399,51 @@ const Home: React.FC = () => {
                 </div>
             </div>
             
-            {/* CSS Keyframes Animation */}
+            {/* CSS Animations */}
             <style>
                 {`
                     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&display=swap');
                     
                     @keyframes gradientShift {
-                        0% {
-                            background-position: 0% 50%;
-                        }
-                        50% {
-                            background-position: 100% 50%;
-                        }
-                        100% {
-                            background-position: 0% 50%;
-                        }
+                        0% { background-position: 0% 50%; }
+                        50% { background-position: 100% 50%; }
+                        100% { background-position: 0% 50%; }
                     }
                     
                     @keyframes fadeInUp {
-                        0% {
-                            opacity: 0;
-                            transform: translateY(30px);
-                        }
-                        100% {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
+                        0% { opacity: 0; transform: translateY(30px); }
+                        100% { opacity: 1; transform: translateY(0); }
+                    }
+                    
+                    @keyframes titleFloat {
+                        0%, 100% { transform: translateY(0px); }
+                        50% { transform: translateY(-8px); }
+                    }
+                    
+                    @keyframes cardFloat {
+                        0%, 100% { transform: translateY(0px); }
+                        50% { transform: translateY(-5px); }
+                    }
+                    
+                    @keyframes iconPulse {
+                        0%, 100% { transform: scale(1); }
+                        50% { transform: scale(1.1); }
+                    }
+                    
+                    @keyframes iconBounce {
+                        0%, 100% { transform: translateY(0); }
+                        50% { transform: translateY(-8px); }
+                    }
+                    
+                    @keyframes iconWave {
+                        0%, 100% { transform: rotate(0deg); }
+                        25% { transform: rotate(10deg); }
+                        75% { transform: rotate(-10deg); }
+                    }
+                    
+                    @keyframes buttonGlow {
+                        0%, 100% { box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2); }
+                        50% { box-shadow: 0 8px 35px rgba(255, 255, 255, 0.4); }
                     }
                     
                     @keyframes pulse {
@@ -398,47 +452,38 @@ const Home: React.FC = () => {
                         100% { transform: scale(0.9); opacity: 0.8; }
                     }
                     
+                    @keyframes twinkle {
+                        0%, 100% { opacity: 0.3; transform: scale(0.8); }
+                        50% { opacity: 1; transform: scale(1.2); }
+                    }
+                    
                     @keyframes floatNote0 {
-                        0%, 100% {
-                            transform: translateY(0px) rotate(0deg);
-                        }
-                        50% {
-                            transform: translateY(-25px) rotate(10deg);
-                        }
+                        0%, 100% { transform: translateY(0px) rotate(0deg); }
+                        50% { transform: translateY(-30px) rotate(15deg); }
                     }
                     
                     @keyframes floatNote1 {
-                        0%, 100% {
-                            transform: translateY(0px) rotate(0deg);
-                        }
-                        50% {
-                            transform: translateY(-20px) rotate(-8deg);
-                        }
+                        0%, 100% { transform: translateY(0px) rotate(0deg); }
+                        50% { transform: translateY(-25px) rotate(-10deg); }
                     }
                     
                     @keyframes floatNote2 {
-                        0%, 100% {
-                            transform: translateY(0px) rotate(0deg);
-                        }
-                        50% {
-                            transform: translateY(-30px) rotate(12deg);
-                        }
+                        0%, 100% { transform: translateY(0px) rotate(0deg); }
+                        50% { transform: translateY(-35px) rotate(20deg); }
                     }
                     
                     @keyframes floatNote3 {
-                        0%, 100% {
-                            transform: translateY(0px) rotate(0deg);
-                        }
-                        50% {
-                            transform: translateY(-18px) rotate(-5deg);
-                        }
+                        0%, 100% { transform: translateY(0px) rotate(0deg); }
+                        50% { transform: translateY(-20px) rotate(-15deg); }
+                    }
+                    
+                    @keyframes floatNote4 {
+                        0%, 100% { transform: translateY(0px) rotate(0deg); }
+                        50% { transform: translateY(-28px) rotate(12deg); }
                     }
                     
                     @media (max-width: 768px) {
-                        /* מניעת גלישה במובייל */
-                        body {
-                            overflow-x: hidden;
-                        }
+                        body { overflow-x: hidden; }
                     }
                 `}
             </style>

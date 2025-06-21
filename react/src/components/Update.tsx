@@ -13,7 +13,7 @@ interface UpdateUserDto {
 }
 
 export default function UpdateUserModal({ onClose }: { onClose: Function }) {
-  const apiUrl = process.env.REACT_APP_API_URL 
+  const apiUrl = import.meta.env.VITE_API_URL 
   const { user, setUser } = useContext(UserContext)!;
   const [open] = useState(true);
   const [success, setSuccess] = useState(false);

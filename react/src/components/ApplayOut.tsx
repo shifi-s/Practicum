@@ -2,6 +2,7 @@ import { Outlet } from "react-router";
 import { UserProvider } from "./userContext";
 import Header from "./Header";
 import { ModalProvider } from "./modalContext";
+import Footer from "./Footer";
 // import Footer from "./Footer";
 // import { Box } from "@mui/material";
 
@@ -12,9 +13,9 @@ const AppLayOut = () => {
                 <ModalProvider>
                     <Header />
                     <Outlet />
-                     {/* <Footer/>  */}
                 </ModalProvider>
             </UserProvider>
+            
         // </Box>
     );
 };

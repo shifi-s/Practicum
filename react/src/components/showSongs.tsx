@@ -38,6 +38,7 @@ import { UserContext } from "./userContext";
 import { Song } from "../models/Song";
 import songStore from "../stores/songsStore";
 import { observer } from "mobx-react-lite";
+import { useLocation } from "react-router-dom";
 
 const DEFAULT_COVER = "/default-cover.png";
 const API_URL = import.meta.env.VITE_API_URL ;
@@ -381,7 +382,8 @@ const MediaPlayer = ({
 };
 
 const ShowSongs = observer(() => {
-  const songs = songStore.filteredSongs;
+  const location = useLocation()
+  const songs = location.pathname==="/songs"?songStore.filteredSongs:songStore.fetchNewSongs;
   const audioRefs = useRef<{ [key: number]: HTMLAudioElement | null }>({});
   const cardsContainerRef = useRef<HTMLDivElement>(null);
   const userContext = useContext(UserContext);

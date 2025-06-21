@@ -13,7 +13,7 @@ import {
 } from "@mui/material"
 
 import { useModal } from "./modalContext"
-import { MusicNote, Whatshot, LibraryMusic } from "@mui/icons-material"
+import { MusicNote, Whatshot, LibraryMusic, Home } from "@mui/icons-material"
 import SearchSong from "./searchSong"
 
 const Header = () => {
@@ -162,7 +162,7 @@ const Header = () => {
                       <span>כל השירים</span>
                     </Box>
                   </NavLink>
-
+             
                   <Box
                     sx={{
                       width: "4px",
@@ -192,11 +192,15 @@ const Header = () => {
                       <span>מה חדש</span>
                     </Box>
                   </NavLink>
+               
+
+          
                 </Box>
               </Box>
 
               {/* Right section - Search & Profile */}
               <Box
+              
                 sx={{
                   display: "flex",
                   alignItems: "center",
@@ -206,6 +210,7 @@ const Header = () => {
                   position: "relative",
                 }}
               >
+              
                 {/* Search - חיפוש תמיד במיקום אחיד */}
                 {location.pathname === "/songs" && (
                   <Box
@@ -222,6 +227,7 @@ const Header = () => {
                 )}
              
                 {/* Profile or login/register buttons */}
+             
                 {sessionStorage.getItem("token") ? (
                   <Box sx={{ ml: "auto" }}>
                     <UserProfil />

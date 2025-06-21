@@ -23,13 +23,15 @@ class SongStore {
     
     return uploadDate >= oneWeekAgo && uploadDate <= now;
   };
+  get fetchNewSongs(){    
+    const newSongs = this.songs.filter(song => this.isFromLastWeek(song.uploadDate));
+
+    return newSongs.slice(0, 5);
+  }
   get filteredSongs() {
     const query = this.query.toLowerCase().trim()
     if (!query)return this.songs.filter(song => !song.isDeleted)
-    if(query==="new")
-    { this.setQuery('');    
-       return this.songs.filter(song => this.isFromLastWeek(song.uploadDate))}
-    
+   
     const terms = query.split(' ').filter(term => term)
   
     return this.songs.filter(song =>
