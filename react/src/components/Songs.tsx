@@ -123,26 +123,6 @@ const Songs = observer(() => {
               transform: translateY(-5px) rotate(-3deg);
             }
           }
-          
-          @keyframes subtlePulse {
-            0%, 100% {
-              box-shadow: 0 8px 32px rgba(58, 134, 255, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
-            }
-            50% {
-              box-shadow: 0 8px 32px rgba(58, 134, 255, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.25) inset;
-            }
-          }
-          
-          @keyframes iconGlow {
-            0% {
-              opacity: 0.5;
-              transform: scale(1);
-            }
-            100% {
-              opacity: 1;
-              transform: scale(1.1);
-            }
-          }
         `}
       </style>
 
@@ -227,7 +207,7 @@ const Songs = observer(() => {
           marginTop: '20px'
         }} />
 
-        {/* Floating Add Song Button - Beautiful Design */}
+        {/* Modern Clean Add Song Button */}
         <Grow in={true} timeout={800}>
           <Box
             display="flex"
@@ -241,102 +221,40 @@ const Songs = observer(() => {
             <Button
               variant="contained"
               sx={{
-                background: "linear-gradient(135deg, #667eea 0%, #764ba2 30%, #3a86ff 70%, #4361ee 100%)",
+                background: "linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)",
                 color: "white",
-                fontSize: "16px",
-                padding: "14px 24px",
-                borderRadius: "20px",
-                fontWeight: 700,
+                fontSize: "15px",
+                padding: "12px 20px",
+                borderRadius: "14px",
+                fontWeight: 600,
                 textTransform: "none",
-                backdropFilter: "blur(15px)",
-                boxShadow: "0 8px 32px rgba(58, 134, 255, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2) inset",
-                transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
-                border: "2px solid rgba(255, 255, 255, 0.25)",
-                position: "relative",
-                overflow: "hidden",
-                minWidth: "160px",
-                
-                // Gradient animation on hover
-                '&::before': {
-                  content: '""',
-                  position: "absolute",
-                  top: 0,
-                  left: "-100%",
-                  width: "100%",
-                  height: "100%",
-                  background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)",
-                  transition: "left 0.6s ease",
-                  zIndex: 1
-                },
+                boxShadow: "0 4px 20px rgba(59, 130, 246, 0.25)",
+                transition: "all 0.2s ease-out",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                minWidth: "140px",
                 
                 '&:hover': {
-                  background: "linear-gradient(135deg, #3a86ff 0%, #4361ee 30%, #667eea 70%, #764ba2 100%)",
-                  transform: "translateY(-5px) scale(1.05)",
-                  boxShadow: "0 12px 40px rgba(58, 134, 255, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.3) inset",
-                  border: "2px solid rgba(255, 255, 255, 0.4)",
-                  
-                  '&::before': {
-                    left: "100%"
-                  }
+                  background: "linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 8px 25px rgba(59, 130, 246, 0.35)",
                 },
                 
                 '&:active': {
-                  transform: "translateY(-2px) scale(1.02)",
-                  boxShadow: "0 6px 20px rgba(58, 134, 255, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2) inset",
+                  transform: "translateY(0px)",
+                  boxShadow: "0 2px 10px rgba(59, 130, 246, 0.3)",
                 },
-                
-                // Pulsing effect
-                animation: "subtlePulse 3s ease-in-out infinite",
               }}
               startIcon={
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    width: 28,
-                    height: 28,
-                    borderRadius: "50%",
-                    background: "rgba(255, 255, 255, 0.2)",
-                    backdropFilter: "blur(10px)",
-                    border: "1px solid rgba(255, 255, 255, 0.3)",
-                    transition: "all 0.3s ease",
-                    position: "relative",
-                    zIndex: 2,
-                    
-                    '&::before': {
-                      content: '""',
-                      position: "absolute",
-                      width: "100%",
-                      height: "100%",
-                      borderRadius: "50%",
-                      background: "radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)",
-                      animation: "iconGlow 2s ease-in-out infinite alternate"
-                    }
-                  }}
-                >
-                  <Add 
-                    sx={{ 
-                      fontSize: 20,
-                      filter: "drop-shadow(0 0 4px rgba(255, 255, 255, 0.6))",
-                      position: "relative",
-                      zIndex: 1
-                    }} 
-                  />
-                </Box>
+                <Add 
+                  sx={{ 
+                    fontSize: 18,
+                    mr: 0.5
+                  }} 
+                />
               }
               onClick={() => user?.name ? navigate("uploadSong") : setIsConnect(false)}
             >
-              <Box
-                sx={{
-                  position: "relative",
-                  zIndex: 2,
-                  textShadow: "0 2px 4px rgba(0, 0, 0, 0.3)",
-                  letterSpacing: "0.5px"
-                }}
-              >
-                העלאת שיר
-              </Box>
+              העלאת שיר
             </Button>
           </Box>
         </Grow>
