@@ -14,6 +14,11 @@ class SongStore {
   setQuery(query: string) {
     this.query = query
   }
+  sortBy: 'none'|'uploadDate' | 'artistName' | 'songName' = 'uploadDate';
+
+setSortBy(sortBy: 'uploadDate' | 'artistName' | 'songName'|'none') {
+  this.sortBy = sortBy;
+}
 
   isFromLastWeek = (date: Date | string) => {
     const uploadDate = new Date(date);
@@ -29,18 +34,32 @@ class SongStore {
     return newSongs.slice(0, 5);
   }
   get filteredSongs() {
-    const query = this.query.toLowerCase().trim()
-    if (!query)return this.songs.filter(song => !song.isDeleted)
-   
-    const terms = query.split(' ').filter(term => term)
+    const query = this.query.toLowerCase().trim();
+    let filtered = this.songs.filter(song => !song.isDeleted);
   
-    return this.songs.filter(song =>
-      terms.every(term =>
-        song.tags?.toLowerCase().includes(term)
-      )
-    )
+    if (query) {
+      const terms = query.split(' ').filter(term => term);
+      filtered = filtered.filter(song =>
+        terms.every(term =>
+          song.tags?.toLowerCase().includes(term)
+        )
+      );
+    }
+  
+    return filtered.slice().sort((a, b) => {
+      if (this.sortBy == 'uploadDate') {
+        return new Date(b.uploadDate).getTime() - new Date(a.uploadDate).getTime();
+      }
+      if (this.sortBy == 'artistName') {
+        return a.artist.localeCompare(b.artist);
+      }
+      if (this.sortBy == 'songName') {
+        return a.title.localeCompare(b.title);
+      }
+      return 0;
+    });
   }
-  // פונקציה להוספת שיר
+    // פונקציה להוספת שיר
 
   async addSong(song:Partial<Song>,token:string) {
     
