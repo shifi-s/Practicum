@@ -1,6 +1,5 @@
 export class Song {
-    createdAt: Date;
-    name: string;
+
     constructor(
         public id: number,
        public title: string,
