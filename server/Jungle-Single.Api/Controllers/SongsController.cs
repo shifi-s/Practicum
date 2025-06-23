@@ -93,7 +93,7 @@ namespace Jungle_Single.Api.Controllers
         [Authorize]
         public async Task<ActionResult> AddSong(SongDto songDto)
         {
-            Console.WriteLine(  songDto.CoverUrl);
+            Console.WriteLine(songDto.CoverUrl);
             var song = new Song
             {
                 CoverUrl=songDto.CoverUrl,

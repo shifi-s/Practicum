@@ -207,7 +207,7 @@ const Songs = observer(() => {
           marginTop: '20px'
         }} />
 
-        {/* Modern Clean Add Song Button */}
+        {/* Glassmorphism Add Song Button */}
         <Grow in={true} timeout={800}>
           <Box
             display="flex"
@@ -221,40 +221,71 @@ const Songs = observer(() => {
             <Button
               variant="contained"
               sx={{
-                background: "linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)",
+                background: "rgba(255, 255, 255, 0.15)",
+                backdropFilter: "blur(20px)",
                 color: "white",
                 fontSize: "15px",
                 padding: "12px 20px",
-                borderRadius: "14px",
+                borderRadius: "16px",
                 fontWeight: 600,
                 textTransform: "none",
-                boxShadow: "0 4px 20px rgba(59, 130, 246, 0.25)",
-                transition: "all 0.2s ease-out",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
+                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2) inset",
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                border: "1px solid rgba(255, 255, 255, 0.2)",
                 minWidth: "140px",
+                textShadow: "0 1px 3px rgba(0, 0, 0, 0.3)",
                 
                 '&:hover': {
-                  background: "linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%)",
-                  transform: "translateY(-2px)",
-                  boxShadow: "0 8px 25px rgba(59, 130, 246, 0.35)",
+                  background: "rgba(255, 255, 255, 0.25)",
+                  transform: "translateY(-3px)",
+                  boxShadow: "0 12px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.3) inset",
+                  border: "1px solid rgba(255, 255, 255, 0.35)",
                 },
                 
                 '&:active': {
-                  transform: "translateY(0px)",
-                  boxShadow: "0 2px 10px rgba(59, 130, 246, 0.3)",
+                  transform: "translateY(-1px)",
+                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.25) inset",
                 },
+                
+                '&::before': {
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: "50%",
+                  background: "linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%)",
+                  borderRadius: "16px 16px 0 0",
+                  pointerEvents: "none"
+                }
               }}
               startIcon={
-                <Add 
-                  sx={{ 
-                    fontSize: 18,
-                    mr: 0.5
-                  }} 
-                />
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: 24,
+                    height: 24,
+                    borderRadius: "8px",
+                    background: "rgba(255, 255, 255, 0.2)",
+                    backdropFilter: "blur(10px)",
+                    border: "1px solid rgba(255, 255, 255, 0.2)",
+                    mr: 0.5,
+                    transition: "all 0.3s ease"
+                  }}
+                >
+                  <Add 
+                    sx={{ 
+                      fontSize: 16,
+                      filter: "drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2))"
+                    }} 
+                  />
+                </Box>
               }
               onClick={() => user?.name ? navigate("uploadSong") : setIsConnect(false)}
             >
-              העלאת שיר
+                 העלאת שיר 
             </Button>
           </Box>
         </Grow>

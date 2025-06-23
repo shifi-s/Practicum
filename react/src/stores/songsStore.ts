@@ -67,6 +67,7 @@ setSortBy(sortBy: 'uploadDate' | 'artistName' | 'songName'|'none') {
         return;
     }
     try {
+      alert('add song')
         await axios.post(`${apiUrl}/api/songs`, song, {
             headers: {
                 Authorization: `Bearer ${token}`,
