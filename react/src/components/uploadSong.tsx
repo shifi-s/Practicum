@@ -33,11 +33,12 @@ import songStore from "../stores/songsStore";
 
 import { parseBlob } from "music-metadata-browser";
 import { Buffer } from "buffer";
+import { observer } from "mobx-react-lite";
 (window as any).Buffer = Buffer;
 
 const genres = ["סוער","רגש","שבת", "חנוכה", "פסח", "פורים", "סוכות", "חתונה", "שירי מלחמה", "חסידי", "מזרחי", "אחר"];
 
-const UploadSong = () => {
+const UploadSong = observer(() => {
     const [file, setFile] = useState<File | null>(null);
     const [progress, setProgress] = useState(0);
     const [isOpen, setIsOpen] = useState(true);
@@ -575,6 +576,5 @@ const UploadSong = () => {
           </>
         </Modal>
     );
-};
-
+})
 export default UploadSong;

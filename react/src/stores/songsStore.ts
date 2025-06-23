@@ -14,7 +14,7 @@ class SongStore {
   setQuery(query: string) {
     this.query = query
   }
-  sortBy: 'none'|'uploadDate' | 'artistName' | 'songName' = 'uploadDate';
+  sortBy: 'none'|'uploadDate' | 'artistName' | 'songName' = 'none'; // משתנה לסידור השירים
 
 setSortBy(sortBy: 'uploadDate' | 'artistName' | 'songName'|'none') {
   this.sortBy = sortBy;
@@ -72,7 +72,7 @@ setSortBy(sortBy: 'uploadDate' | 'artistName' | 'songName'|'none') {
                 Authorization: `Bearer ${token}`,
             },
         });
-        
+        await this.fetchSongs();
     } catch (error: any) {
         console.error("Upload failed:", error.response?.data?.message);
     }
