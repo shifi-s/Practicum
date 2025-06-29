@@ -64,6 +64,7 @@ setSortBy(sortBy: 'uploadDate' | 'artistName' | 'songName'|'none') {
   async addSong(song:Partial<Song>,token:string) {
     
     if (!token) {
+        alert('noo')
         return;
     }
     try {
